@@ -1,0 +1,64 @@
+version: '3'
+services:
+  app_new_php:
+    container_name: app_new_php
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - .docker/php/conf.d/:/usr/local/etc/php/conf.d/
+    networks:
+      - app-network
+  app_new_nginx:
+    image: nginx:latest
+    container_name: app_new_nginx
+    volumes:
+    - ./:/var/www
+    - .docker/nginx/conf.d/:/etc/nginx/conf.d/
+    - .docker/nginx/cache/:/etc/nginx/cache/
+    ports:
+    - "8787:80"
+    - "7343:433"
+    networks:
+      - app-network
+  app_new_mysql:
+    image: "mysql:5.7"
+    container_name: app_new_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: "new_app"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - "33605:3306"
+    volumes:
+      - dbdata:/var/lib/mysql/
+      - ./:/home
+    networks:
+      - app-network
+    expose:
+      - "3306"
+  redis:
+    image: "redis:alpine"
+    container_name: app_new_redis
+    command: redis-server
+    volumes:
+      - redis-store:/var/lib/redis
+    ports:
+      - "6320:6379"
+    networks:
+      - app-network
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
+  redis-store:
+    driver: local
+  docker tag local-image:tagname new-repo:tagname
+  docker push new-repo:tagname
