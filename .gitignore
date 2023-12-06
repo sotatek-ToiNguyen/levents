@@ -6,7 +6,6 @@
 node_modules/
 /vendor/
 /public/storage/
-/public/modules/
 /storage/logs/*
 public/phplog
 /Modules/*/Assets/
