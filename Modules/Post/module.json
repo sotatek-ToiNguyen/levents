@@ -1,0 +1,10 @@
+{
+    "name": "Post",
+    "alias": "post",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+    ],
+    "files": []
+}

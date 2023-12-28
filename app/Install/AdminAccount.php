@@ -44,6 +44,12 @@ class AdminAccount
             'admin.products.create' => true,
             'admin.products.edit' => true,
             'admin.products.destroy' => true,
+            // post
+            'admin.post.index' => true,
+            'admin.post.create' => true,
+            'admin.post.edit' => true,
+            'admin.post.destroy' => true,
+
             // brands
             'admin.brands.index' => true,
             'admin.brands.create' => true,

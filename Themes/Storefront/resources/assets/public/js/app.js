@@ -1,3 +1,5 @@
+import ColectionImage from "./components/home/ColectionImage";
+
 require('./storefront');
 
 import Vue from 'vue';
@@ -17,6 +19,8 @@ import HomeFeatures from './components/home/HomeFeatures.vue';
 import FeaturedCategories from './components/home/FeaturedCategories.vue';
 import BannerThreeColumnFullWidth from './components/home/BannerThreeColumnFullWidth.vue';
 import ProductTabsOne from './components/home/ProductTabsOne.vue';
+import Colection from './components/home/Colection';
+import ColectionVideo from './components/home/ColectionVideo';
 import TopBrands from './components/home/TopBrands.vue';
 import FlashSaleAndVerticalProducts from './components/home/FlashSaleAndVerticalProducts.vue';
 import FlashSale from './components/home/FlashSale.vue';
@@ -36,6 +40,8 @@ import CheckoutCreate from './components/checkout/Create';
 import CompareIndex from './components/compare/Index';
 import MyWishlist from './components/account/wishlist/Index';
 import MyAddresses from './components/account/addresses/Index';
+import Styling from "./components/home/Styling";
+import ProductTabsOneDetail from "./components/home/ProductTabsOneDetail";
 
 Vue.prototype.route = route;
 Vue.prototype.$notify = notify;
@@ -57,6 +63,10 @@ Vue.component('home-features', HomeFeatures);
 Vue.component('featured-categories', FeaturedCategories);
 Vue.component('banner-three-column-full-width', BannerThreeColumnFullWidth);
 Vue.component('product-tabs-one', ProductTabsOne);
+Vue.component('colection', Colection);
+Vue.component('colection-video', ColectionVideo);
+Vue.component('colection-image', ColectionImage);
+Vue.component('styling', Styling);
 Vue.component('top-brands', TopBrands);
 Vue.component('flash-sale-and-vertical-products', FlashSaleAndVerticalProducts);
 Vue.component('flash-sale', FlashSale);
@@ -67,6 +77,7 @@ Vue.component('banner-three-column', BannerThreeColumn);
 Vue.component('product-tabs-two', ProductTabsTwo);
 Vue.component('banner-one-column', BannerOneColumn);
 Vue.component('product-index', ProductIndex);
+Vue.component('product-tabs-one-detail', ProductTabsOneDetail);
 Vue.component('product-card-grid-view', ProductCardGridView);
 Vue.component('product-card-list-view', ProductCardListView);
 Vue.component('product-card-vertical', ProductCardVertical);

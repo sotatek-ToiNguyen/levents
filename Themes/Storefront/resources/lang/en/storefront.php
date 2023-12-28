@@ -69,6 +69,7 @@ return [
         'social_links' => 'Social Links',
         'slider_banners' => 'Slider Banners',
         'featured_categories' => 'Featured Categories',
+        'collection_video' => 'Collection Video',
         'three_column_full_width_banners' => 'Three Column Full Width Banners',
         'product_tabs_one' => 'Product Tabs One',
         'top_brands' => 'Top Brands',

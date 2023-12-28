@@ -16,6 +16,9 @@
         <meta property="og:locale:alternate" content="{{ $code }}">
     @endforeach
 @endpush
+@section('breadcrumb')
+    <li class="active">{{$page->name}}</li>
+@endsection
 
 @section('content')
     <section class="custom-page-wrap clearfix">

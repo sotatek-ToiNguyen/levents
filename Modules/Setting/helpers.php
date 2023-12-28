@@ -21,6 +21,7 @@ if (! function_exists('setting')) {
         }
 
         try {
+
             return app('setting')->get($key, $default);
         } catch (PDOException $e) {
             print_r( $e);

@@ -103,7 +103,7 @@
                     @endif
 
                     @if ($footerMenuTwo->isNotEmpty())
-                        <div class="col-lg-3 col-md-5">
+                        <div class="col-lg-5 col-md-5">
                             <div class="footer-links">
                                 <h4 class="title">{{ setting('storefront_footer_menu_two_title') }}</h4>
 

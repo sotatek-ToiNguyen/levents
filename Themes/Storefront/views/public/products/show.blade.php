@@ -235,6 +235,8 @@
             </div>
         </section>
     </product-show>
+    <product-tabs-one-detail :category="'new-arrival'" :catid="1" :label="'New Arrival'"></product-tabs-one-detail>
+    <product-tabs-one-detail :category="'best-seller'" :catid="2" :label="'Best-Seller'"></product-tabs-one-detail>
 @endsection
 
 @push('scripts')

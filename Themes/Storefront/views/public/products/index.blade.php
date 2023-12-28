@@ -15,7 +15,9 @@
         FleetCart.langs['storefront::products.show_less'] = '{{ trans("storefront::products.show_less") }}';
     </script>
 @endpush
-
+@section('breadcrumb')
+    <li class="active">{{$categoryName ?? "Shop"}}</li>
+@endsection
 @section('content')
     <product-index
         initial-query="{{ request('query') }}"

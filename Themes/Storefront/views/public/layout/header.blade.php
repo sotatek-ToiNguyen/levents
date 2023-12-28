@@ -1,7 +1,11 @@
 <header class="header-wrap">
     <div class="header-wrap-inner">
+        <header-search :categories="{{ $categories }}" :most-searched-keywords="{{ $mostSearchedKeywords }}"
+                       is-most-searched-keywords-enabled="{{ setting('storefront_most_searched_keywords_enabled') }}"
+                       initial-query="{{ request('query') }}" initial-category="{{ request('category') }}">
+        </header-search>
         <div class="container">
-            <div class="row flex-nowrap justify-content-between position-relative">
+            <div class="row flex-nowrap align-items-center justify-content-between position-relative">
                 <div class="header-column-left">
                     <div class="sidebar-menu-icon-wrap">
                         <div class="sidebar-menu-icon">
@@ -11,37 +15,39 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('home') }}" class="header-logo">
-                        @if (is_null($logo))
-                            <h3>{{ setting('store_name') }}</h3>
-                        @else
-                            <img src="{{ $logo }}" alt="logo">
-                        @endif
-                    </a>
-                </div>
 
-                <header-search :categories="{{ $categories }}" :most-searched-keywords="{{ $mostSearchedKeywords }}"
-                    is-most-searched-keywords-enabled="{{ setting('storefront_most_searched_keywords_enabled') }}"
-                    initial-query="{{ request('query') }}" initial-category="{{ request('category') }}">
-                </header-search>
+                </div>
+                <a href="{{ route('home') }}" class="">
+                    @if (is_null($logo))
+                        <h3>{{ setting('store_name') }}</h3>
+                    @else
+                        <img width="200px" src="{{ $logo }}" alt="logo">
+                    @endif
+                </a>
+
 
                 <div class="header-column-right d-flex">
-                    <a href="{{ route('account.wishlist.index') }}" class="header-wishlist">
-                        <div class="icon-wrap">
-                            <i class="lar la-heart"></i>
-                            <div class="count" v-text="wishlistCount"></div>
-                        </div>
+{{--                    <a href="{{ route('account.wishlist.index') }}" class="header-wishlist">--}}
+{{--                        <div class="icon-wrap">--}}
+{{--                            <i class="lar la-heart"></i>--}}
+{{--                            <div class="count" v-text="wishlistCount"></div>--}}
+{{--                        </div>--}}
 
-                        <span>{{ trans('storefront::layout.favorites') }}</span>
-                    </a>
-
+{{--                        <span>{{ trans('storefront::layout.favorites') }}</span>--}}
+{{--                    </a>--}}
+                    <button class="icon-search"><i class="las la-search"></i></button>
                     <div class="header-cart">
                         <div class="icon-wrap">
                             <i class="las la-cart-arrow-down"></i>
                             <div class="count" v-text="cart.quantity"></div>
                         </div>
 
-                        <span v-html="cart.subTotal.inCurrentCurrency.formatted"></span>
+{{--                        <span v-html="cart.subTotal.inCurrentCurrency.formatted"></span>--}}
+                    </div>
+                    <div class="hearder-acc">
+                        <a href="http://localhost:8787/account">
+                            <i class="las la-user"></i>
+                        </a>
                     </div>
                 </div>
             </div>

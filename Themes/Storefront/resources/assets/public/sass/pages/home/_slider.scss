@@ -39,19 +39,19 @@
 
     .slide-content {
         position: absolute;
-        top: 0;
+        bottom: 0;
         display: flex;
         height: 100%;
         width: 100%;
-        align-items: center;
+        align-items: end;
+        padding: 0 0 20px 0;
 
         &.align-left {
             left: 0;
             justify-content: flex-start;
 
             .captions {
-                margin-left: 100px;
-                text-align: left;
+                text-align: center;
 
                 .caption-2 {
                     margin-right: 90px;
@@ -65,7 +65,7 @@
 
             .captions {
                 margin-right: 100px;
-                text-align: right;
+                text-align: center;
 
                 .caption-2 {
                     margin-left: 90px;
@@ -74,7 +74,7 @@
         }
 
         .captions {
-            width: 400px;
+            width: 100%;
         }
 
         .caption {
@@ -82,10 +82,10 @@
         }
 
         .caption-1 {
-            font-size: 48px;
+            font-size: 25px;
             font-weight: 300;
             line-height: 48px;
-            color: $color-black;
+            color: #ffffff;
         }
 
         .caption-2 {
@@ -97,8 +97,12 @@
 
         .btn-slider {
             display: none;
-            margin-top: 37px;
-            padding: 10px 30px;
+            padding: 20px 100px;
+            background: #ffffff;
+            color: #000;
+            font-size: 18px;
+            font-weight: 100;
+            border-radius: 0;
         }
     }
 
@@ -190,7 +194,6 @@
 
             .btn-slider {
                 font-size: 14px;
-                margin-top: 32px;
                 padding: 8px 20px;
             }
         }
@@ -233,7 +236,6 @@
 
             .btn-slider {
                 font-size: 13px;
-                margin-top: 27px;
                 padding: 6px 16px;
             }
         }

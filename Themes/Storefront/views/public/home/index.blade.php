@@ -19,7 +19,10 @@
     @if (setting('storefront_product_tabs_1_section_enabled'))
         <product-tabs-one :data="{{ json_encode($productTabsOne) }}"></product-tabs-one>
     @endif
-
+    <colection></colection>
+    <styling></styling>
+    <colection-video></colection-video>
+    <colection-image></colection-image>
     @if (setting('storefront_top_brands_section_enabled') && $topBrands->isNotEmpty())
         <top-brands :top-brands="{{ json_encode($topBrands) }}"></top-brands>
     @endif
@@ -48,3 +51,4 @@
         <banner-one-column :banner="{{ json_encode($oneColumnBanner) }}"></banner-one-column>
     @endif
 @endsection
+

@@ -7,12 +7,14 @@
                         v-for="(tab, index) in tabs"
                         :key="index"
                         :class="classes(tab)"
-                        @click="change(tab)"
+                        @click="changeData(tab)"
                     >
                         {{ tab.label }}
                     </li>
                 </ul>
+                <a href="" class="read-more">Xem tất cả</a>
             </div>
+
 
             <div class="tab-content landscape-left-tab-products">
                 <ProductCard v-for="product in products" :key="product.id" :product="product"/>
@@ -54,17 +56,15 @@
                     dots: false,
                     arrows: true,
                     infinite: true,
-                    slidesToShow: 6,
-                    slidesToScroll: 6,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     rtl: window.FleetCart.rtl,
-                    prevArrow: slickPrevArrow(),
-                    nextArrow: slickNextArrow(),
                     responsive: [
                         {
                             breakpoint: 1761,
                             settings: {
-                                slidesToShow: 5,
-                                slidesToScroll: 5,
+                                slidesToShow: 4,
+                                slidesToScroll: 4,
                             },
                         },
                         {
@@ -77,8 +77,8 @@
                         {
                             breakpoint: 1051,
                             settings: {
-                                slidesToShow: 3,
-                                slidesToScroll: 3,
+                                slidesToShow: 4,
+                                slidesToScroll: 4,
                             },
                         },
                         {
@@ -116,6 +116,19 @@
                     ],
                 };
             },
+
+          changeData(tab){
+              let href = '/categories/' + tab.label.replace(' ', '-').toLowerCase() + '/products';
+              $('.read-more').attr('href', href)
+              this.change(tab);
+            }
         },
+
+      mounted() {
+          if(this.data){
+            let href = '/categories/' + this.data[0].replace(' ', '-').toLowerCase() + '/products';
+            $('.read-more').attr('href', href)
+          }
+      }
     };
 </script>

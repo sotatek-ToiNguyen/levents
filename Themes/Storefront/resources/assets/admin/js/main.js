@@ -1,5 +1,5 @@
 window.admin.removeSubmitButtonOffsetOn([
-    '#logo', '#footer', '#newsletter', '#product_page', '#slider_banners', '#three_column_full_width_banners',
+    '#logo', '#footer', '#newsletter', '#product_page', '#slider_banners', '#collection_video','#three_column_full_width_banners',
     '#brands', '#two_column_banners', '#three_column_banners', '#one_column_banner',
 ]);
 

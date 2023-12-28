@@ -3,29 +3,26 @@ const mix = require("laravel-mix");
 const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 
 require("laravel-mix-merge-manifest");
-
+// let configs;
 // compile admin and theme assets
 let configs = glob.sync(
-    "{./Modules/*/webpack.mix.js,./Themes/*/webpack.mix.js}"
+    "{./Themes/*/webpack.mix.js}"
 );
 
 // compile theme assets
 // let configs = glob.sync("./Themes/*/webpack.mix.js");
 
-if (process.env.module !== undefined) {
-    let module =
-        process.env.module.charAt(0).toUpperCase() +
-        process.env.module.slice(1);
+// if (process.env.module !== undefined) {
+//     let module =
+//         process.env.module.charAt(0).toUpperCase() +
+//         process.env.module.slice(1);
+//
+//     configs = [`./Modules/${module}/webpack.mix.js`];
+// }
+console.log(222)
+let theme = 'Storefront';
 
-    configs = [`./Modules/${module}/webpack.mix.js`];
-}
-
-if (process.env.theme !== undefined) {
-    let theme =
-        process.env.theme.charAt(0).toUpperCase() + process.env.theme.slice(1);
-
-    configs = [`./Themes/${theme}/webpack.mix.js`];
-}
+configs = [`./Themes/${theme}/webpack.mix.js`];
 
 mix.setPublicPath("./")
     .options({ processCssUrls: false })
@@ -37,12 +34,13 @@ let commands = [];
 configs.forEach(config => {
     require(config);
 
-    let module = config.match(/Modules\/(\w+?)\//);
+    // let module = config.match(/Modules\/(\w+?)\//);
     let theme = config.match(/Themes\/(\w+?)\//);
-
-    if (module !== null) {
-        commands.push(`php artisan module:publish ${module[1]}`);
-    }
+    console.log(theme);
+    //
+    // if (module !== null) {
+    //     commands.push(`php artisan module:publish ${module[1]}`);
+    // }
 
     if (theme !== null) {
         commands.push(`php artisan stylist:publish ${theme[1]}`);
@@ -60,3 +58,8 @@ mix.webpackConfig({
         })
     ]
 });
+console.log(__dirname);
+mix.copy(
+        `${__dirname}/Themes/Storefront/assets/public/css/app.css`,
+        `${__dirname}/public/themes/storefront/public/css/app.css`
+    )

@@ -38,6 +38,10 @@ mix.js(
         `${__dirname}/resources/assets/public/images`,
         `${__dirname}/assets/public/images`
     )
+    .copy(
+        `${__dirname}/assets/public/css/app.css`,
+        `/var/www/public/themes/storefront/public/css/app.css`
+    )
     .then(() => {
         execSync(
             `npm run rtlcss ${__dirname}/assets/admin/css/storefront.css ${__dirname}/assets/admin/css/storefront.rtl.css`
