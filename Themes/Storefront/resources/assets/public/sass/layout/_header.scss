@@ -11,9 +11,30 @@
 }
 
 .header-wrap-inner {
-    padding: 40px 0;
+    padding: 20px 0;
 }
-
+.searched-keywords{
+  display: none !important;
+}
+.sticky{
+  .header-search-lg{
+    height: 40px;
+    input{
+      height: 38px !important;
+    }
+  }
+  .sidebar-search-close {
+    top: 25px;
+  }
+}
+.sidebar-search-close{
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  .las{
+    font-size: 30px;
+  }
+}
 @media screen and (max-width: $lg) {
     .header-wrap-inner {
         padding: 15px 0;

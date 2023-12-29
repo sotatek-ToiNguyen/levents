@@ -21653,10 +21653,19 @@ textarea.form-control {
 }
 .header-search-wrap {
   display: none;
-  position: relative;
   min-width: 0;
   flex-grow: 1;
-  padding: 0 40px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #ffffff;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 20px;
+}
+.header-search-wrap.active {
+  display: block;
 }
 
 .icon-search {
@@ -21681,6 +21690,8 @@ textarea.form-control {
 
 .header-search {
   position: relative;
+  width: 800px;
+  margin: auto;
 }
 .header-search .header-search-lg {
   position: relative;
@@ -21700,8 +21711,8 @@ textarea.form-control {
 }
 .header-search .header-search-lg .btn-search {
   display: flex;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   margin-left: 40px;
   padding: 0;
   align-items: center;
@@ -22139,7 +22150,30 @@ textarea.form-control {
 }
 
 .header-wrap-inner {
-  padding: 40px 0;
+  padding: 20px 0;
+}
+
+.searched-keywords {
+  display: none !important;
+}
+
+.sticky .header-search-lg {
+  height: 40px;
+}
+.sticky .header-search-lg input {
+  height: 38px !important;
+}
+.sticky .sidebar-search-close {
+  top: 25px;
+}
+
+.sidebar-search-close {
+  position: absolute;
+  right: 20px;
+  top: 35px;
+}
+.sidebar-search-close .las {
+  font-size: 30px;
 }
 
 @media screen and (max-width: 991px) {

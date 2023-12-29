@@ -54,6 +54,21 @@ $(() => {
         e.stopPropagation();
     });
 
+
+    /*      search
+ /*----------------------------------------*/
+    let search = $('.icon-search'),
+        elementSearch = $('.header-search-wrap'),
+        closeSearch = $('.sidebar-search-close')
+    search.on('click', (e) => {
+        e.stopPropagation();
+        elementSearch.addClass('active');
+    });
+    closeSearch.on('click', (e) => {
+        e.stopPropagation();
+        elementSearch.removeClass('active');
+    });
+
     /*      header
     /*----------------------------------------*/
 

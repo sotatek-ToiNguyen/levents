@@ -88,8 +88,8 @@
                 </ul>
             </div>
         </div>
-
-        <div class="header-search-sm-form">
+        <div class="sidebar-search-close"><i class="las la-times"></i></div>
+      <div class="header-search-sm-form">
             <form class="search-form" @submit.prevent="search">
                 <div class="btn-close">
                     <i class="las la-arrow-left"></i>
