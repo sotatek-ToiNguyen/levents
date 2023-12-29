@@ -53,9 +53,7 @@
                     </div>
                 </div>
 
-                <div class="header-search-sm">
-                    <i class="las la-search"></i>
-                </div>
+
             </form>
 
             <div

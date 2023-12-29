@@ -91,9 +91,39 @@
         }
     }
 }
+.header-search-sm{
+    display: none;
+}
 
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 600px) {
+    .header-search-sm{
+        display: flex;
+        align-items: center;
+        .las{
+            font-size: 22px;
+        }
+    }
+    .header-search-sm-form{
+        padding: 10px 0;
+    }
     .header-column-right {
         padding-left: 10px;
+    }
+    .sidebar-search-close{
+        display: none;
+    }
+    .icon-search{
+        display: none;
+    }
+    .search-form{
+        .header-search-sm{
+            display: none;
+        }
+    }
+    .header-cart{
+        margin-right: 0 !important;
+    }
+    .home-slider .slide-content {
+        padding: 0 0 10px 0 !important;
     }
 }

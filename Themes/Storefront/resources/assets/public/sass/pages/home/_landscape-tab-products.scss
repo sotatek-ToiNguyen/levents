@@ -35,14 +35,57 @@
             .tabs {
                 display: block;
                 margin-top: 5px;
-                text-align: center;
+                text-align: left;
                 float: none !important;
 
                 .tab-item {
+                    font-size: 16px;
                     display: inline-block;
                     float: none;
                 }
             }
         }
+    }
+    .tabs:not(.featured-categories-tabs) .tab-item {
+        margin-left: 20px;
+    }
+    .tab-item.read-more{
+        float: right !important;
+        padding: 12px 0 !important;
+        background: none;
+        a{
+            display: block;
+            padding: 5px 10px;
+        }
+    }
+    .colection h2 {
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    .colection .read-more-colection {
+        padding: 5px 15px;
+    }
+  .colection .post-card button a {
+    padding: 10px 20px;
+  }
+    colection .post-card {
+        margin: 0 10px;
+    }
+  .colection-video .container {
+    display: block;
+  }
+    .colection-video .container video, .colection-video .container img {
+        width: 100%;
+    }
+    .colection-video .container .tab-content {
+        padding-left: 0px;
+        text-align: center;
+    }
+    .colection-video .container .tab-content-left {
+        padding-right: 0px;
+      margin-bottom: 20px;
+    }
+    .colection-video .container .tab-content a {
+        margin: auto;
     }
 }

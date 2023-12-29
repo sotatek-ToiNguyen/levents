@@ -1,7 +1,8 @@
 <header class="header-wrap">
     <div class="header-wrap-inner">
         <header-search :categories="{{ $categories }}" :most-searched-keywords="{{ $mostSearchedKeywords }}"
-                       is-most-searched-keywords-enabled="{{ setting('storefront_most_searched_keywords_enabled') }}"
+                       is-most-searched-keywords-enabled="false"
+{{--                       {{ setting('storefront_most_searched_keywords_enabled') }}--}}
                        initial-query="{{ request('query') }}" initial-category="{{ request('category') }}">
         </header-search>
         <div class="container">
@@ -14,7 +15,9 @@
                             <span></span>
                         </div>
                     </div>
-
+                    <div class="header-search-sm">
+                        <i class="las la-search"></i>
+                    </div>
 
                 </div>
                 <a href="{{ route('home') }}" class="">

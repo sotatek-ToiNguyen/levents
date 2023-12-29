@@ -11,8 +11,8 @@
                     >
                         {{ tab.label }}
                     </li>
+                    <li class="tab-item read-more"><a href="" class="read-more">Xem tất cả</a></li>
                 </ul>
-                <a href="" class="read-more">Xem tất cả</a>
             </div>
 
 

@@ -82,7 +82,7 @@ $(() => {
     headerSearchSm.on('click', (e) => {
         let target = $(e.currentTarget);
 
-        target.parents('.header-search').next().toggleClass('active');
+        $('.header-search-sm-form').addClass('active');
         searchInputSm.focus();
     });
 
