@@ -21569,7 +21569,6 @@ textarea.form-control {
 .header-column-left {
   display: flex;
   align-self: flex-start;
-  width: 205px;
 }
 
 .sidebar-menu-icon-wrap {
@@ -27733,6 +27732,6 @@ textarea.form-control {
   font-display: swap;
   src: url("//levents.asia/cdn/fonts/futura/futura_n4.df36ce3d9db534a4d7947f4aa825495ed740e410.woff2?h1=bGV2ZW50cy1hc2lhLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=bGV2ZW50cy5hc2lh&hmac=dfa0e6bc27174e977fa7d9518391566a8ac92a5597aaa6a0e1c22beb4fbf72ef") format("woff2"), url("//levents.asia/cdn/fonts/futura/futura_n4.6bce24beb4ba1ff4ddeb20f7cd6e2fa513a3d6ec.woff?h1=bGV2ZW50cy1hc2lhLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=bGV2ZW50cy5hc2lh&hmac=da053cac3f938912f777a716a36ba02aeccc5b42705e97b2104a19ce4f815187") format("woff");
 }
-h1, h2, h3, h4, h5, h6, p, span {
+h1, h2, h3, h4, h5, h6, p, span, body {
   font-family: "Futura", Arial, Helvetica, sans-serif !important;
 }
