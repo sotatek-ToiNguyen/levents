@@ -48,7 +48,7 @@
 {{--                        <span v-html="cart.subTotal.inCurrentCurrency.formatted"></span>--}}
                     </div>
                     <div class="hearder-acc">
-                        <a href="http://localhost:8787/account">
+                        <a href="{{ route('account.dashboard.index') }}">
                             <i class="las la-user"></i>
                         </a>
                     </div>
