@@ -21569,6 +21569,7 @@ textarea.form-control {
 .header-column-left {
   display: flex;
   align-self: flex-start;
+  width: 188px;
 }
 
 .sidebar-menu-icon-wrap {
@@ -21652,6 +21653,11 @@ textarea.form-control {
   .header-logo {
     width: 160px;
     padding-right: 5px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header-column-left {
+    width: auto;
   }
 }
 .header-search-wrap {
