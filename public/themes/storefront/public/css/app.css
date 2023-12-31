@@ -23683,6 +23683,15 @@ textarea.form-control {
     font-size: 13px;
     padding: 6px 16px;
   }
+
+  .home-slider .slide {
+    background: url(https://levents.asia/cdn/shop/files/BANNER_HOMEPAGE_-_MOBILE_-_2.jpg?v=1703352127&width=375);
+    height: 600px;
+    background-size: cover;
+  }
+  .home-slider .slide img {
+    display: none;
+  }
 }
 @media screen and (max-width: 450px) {
   .home-slider .slide-content.align-left .captions {

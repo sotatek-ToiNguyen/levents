@@ -240,6 +240,14 @@
             }
         }
     }
+    .home-slider .slide{
+        background: url(https://levents.asia/cdn/shop/files/BANNER_HOMEPAGE_-_MOBILE_-_2.jpg?v=1703352127&width=375);
+        height: 600px;
+        background-size: cover;
+        img{
+            display: none;
+        }
+    }
 }
 
 @media screen and (max-width: 450px) {
