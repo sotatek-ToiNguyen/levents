@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('products', 'ProductController@index')->name('products.index');
+Route::get('crew', 'ProductController@crew')->name('crew.index');
 Route::get('products/{slug}', 'ProductController@show')->name('products.show');
 
 Route::get('suggestions', 'SuggestionController@index')->name('suggestions.index');
