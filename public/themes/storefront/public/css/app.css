@@ -27752,3 +27752,88 @@ textarea.form-control {
 h1, h2, h3, h4, h5, h6, p, span, body {
   font-family: "Futura", Arial, Helvetica, sans-serif !important;
 }
+
+.crew {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.crew .crew-item {
+  width: 25%;
+  margin: 0 10px;
+}
+.crew .crew-item:hover {
+  cursor: pointer;
+}
+.crew .crew-item img {
+  width: 100%;
+}
+
+#myModal.modal {
+  background: rbga(#000000, 0.2);
+}
+
+#myModal .product-card:hover .product-name {
+  transform: translateY(0px);
+}
+
+.product-card:hover .product-price {
+  opacity: 1;
+  visibility: unset;
+}
+
+#myModal.in {
+  display: block;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+#myModal.in .close {
+  font-size: 40px;
+  opacity: 1;
+}
+#myModal.in .close:hover {
+  cursor: pointer;
+}
+
+#myModal .modal-content {
+  width: 70%;
+  margin: auto;
+  top: 50%;
+  display: flex;
+  flex-direction: unset;
+  transform: translateY(-50%);
+}
+#myModal .modal-content img {
+  width: 100%;
+}
+#myModal .modal-content .thumbnail-name {
+  width: 60%;
+}
+#myModal .modal-content .thumbnail-name img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#myModal .modal-content .product-card-modal {
+  width: 40%;
+  margin: 0;
+  padding: 0 20px;
+}
+#myModal .modal-content .gallery-modal__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  align-items: center;
+}
+#myModal .modal-content .gallery-modal__header a {
+  margin: 0;
+}
+#myModal .modal-content .button {
+  padding: 10px 20px;
+  background: #000000;
+  display: block;
+  margin: 10px 0;
+  text-align: center;
+  color: #ffffff;
+}

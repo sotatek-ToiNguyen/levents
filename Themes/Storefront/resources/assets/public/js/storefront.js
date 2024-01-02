@@ -2,6 +2,29 @@ require('./vendors/vendors');
 
 $(() => {
 
+    $('#myModal .close').on('click', function(){
+        $("#myModal").removeClass("in");
+    })
+
+    $(".crew-item").click(function(){
+        let slug = $(this).attr('data-slug');
+        let image = $(this).find('img').attr('src');
+        console.log(image);
+        $.ajax({
+                type: 'GET',
+                url: route('productsApi.show', slug),
+                success(response)
+                {
+                    $("#myModal .thumbnail-name img").attr('src', image);
+                    $("#myModal .product-card-modal img").attr('src', response['base_image']['path'])
+                    $("#myModal .product-card-modal h6").html(response['name'])
+                    $("#myModal .product-card-modal .product-price").html(response['formatted_price'])
+                    $("#myModal .product-card-modal a").attr('href', '/products/' + response['slug'])
+                    console.log(response);
+                    $("#myModal").addClass("in");
+                }
+        })
+    });
     /*      variables
     /*----------------------------------------*/
 

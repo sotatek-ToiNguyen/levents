@@ -6,19 +6,19 @@ require("laravel-mix-merge-manifest");
 // let configs;
 // compile admin and theme assets
 let configs = glob.sync(
-    "{./Themes/*/webpack.mix.js}"
+    "{./Modules/*/webpack.mix.js,./Themes/*/webpack.mix.js}"
 );
 
 // compile theme assets
 // let configs = glob.sync("./Themes/*/webpack.mix.js");
 
-// if (process.env.module !== undefined) {
-//     let module =
-//         process.env.module.charAt(0).toUpperCase() +
-//         process.env.module.slice(1);
-//
-//     configs = [`./Modules/${module}/webpack.mix.js`];
-// }
+if (process.env.module !== undefined) {
+    let module =
+        process.env.module.charAt(0).toUpperCase() +
+        process.env.module.slice(1);
+
+    configs = [`./Modules/${module}/webpack.mix.js`];
+}
 console.log(222)
 let theme = 'Storefront';
 
@@ -34,13 +34,13 @@ let commands = [];
 configs.forEach(config => {
     require(config);
 
-    // let module = config.match(/Modules\/(\w+?)\//);
+    let module = config.match(/Modules\/(\w+?)\//);
     let theme = config.match(/Themes\/(\w+?)\//);
     console.log(theme);
-    //
-    // if (module !== null) {
-    //     commands.push(`php artisan module:publish ${module[1]}`);
-    // }
+
+    if (module !== null) {
+        commands.push(`php artisan module:publish ${module[1]}`);
+    }
 
     if (theme !== null) {
         commands.push(`php artisan stylist:publish ${theme[1]}`);

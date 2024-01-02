@@ -11,3 +11,9 @@
     'inputName' => 'files[additional_images][]',
     'files' => $product->additional_images,
 ])
+
+@include('media::admin.image_picker.single', [
+    'title' => 'Crew image',
+    'inputName' => 'files[crew_image]',
+    'file' => $product->crew_image,
+])

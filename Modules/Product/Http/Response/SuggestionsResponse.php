@@ -74,6 +74,7 @@ class SuggestionsResponse implements Responsable
                 'name' => $this->highlight($product->name),
                 'formatted_price' => $product->getFormattedPriceAttribute(),
                 'base_image' => $product->getBaseImageAttribute(),
+                'crew_image' => $product->getCrewImageAttribute(),
                 'is_out_of_stock' => $product->isOutOfStock(),
                 'url' => $product->url(),
             ];

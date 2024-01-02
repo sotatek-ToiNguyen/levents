@@ -121,3 +121,83 @@ $grid-columns: 18;
 h1, h2, h3, h4, h5, h6, p, span, body {
    font-family: "Futura", Arial, Helvetica, sans-serif !important;
 }
+.crew {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .crew-item {
+        width: 25%;
+        margin: 0 10px;
+        &:hover{
+            cursor: pointer;
+        }
+        img{
+            width: 100%;
+        }
+    }
+}
+#myModal.modal{
+    background: rbga(#000000,0.2);
+}
+#myModal .product-card:hover .product-name {
+    transform: translateY(0px);
+}
+.product-card:hover .product-price {
+    opacity: 1;
+    visibility: unset;
+}
+#myModal.in{
+    display: block;
+    opacity: 1;
+    background: rgb(0 0 0 / 20%);
+    .close{
+        font-size: 40px;
+        &:hover{
+            cursor: pointer;
+        }
+        opacity: 1;
+    }
+}
+#myModal .modal-content{
+    width: 70%;
+    margin: auto;
+    top: 50%;
+    display: flex;
+    flex-direction: unset;
+   transform: translateY(-50%);
+
+    img{
+        width: 100%;
+    }
+    .thumbnail-name{
+        width: 60%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .product-card-modal{
+        width: 40%;
+        margin: 0;
+        padding: 0 20px;
+    }
+    .gallery-modal__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        align-items: center;
+        a{
+            margin: 0;
+        }
+    }
+    .button{
+        padding: 10px 20px;
+        background: #000000;
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+        color: #ffffff;
+    }
+}
+

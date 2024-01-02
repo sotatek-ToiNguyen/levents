@@ -8,6 +8,16 @@ Route::get('products', [
     'middleware' => 'can:admin.products.index',
 ]);
 
+Route::get('styling', [
+    'as' => 'admin.products.styling.index',
+    'uses' => 'ProductController@stylingIndex',
+]);
+
+Route::get('styling/create', [
+    'as' => 'admin.products.styling.create',
+    'uses' => 'ProductController@stylingCreate',
+]);
+
 Route::get('products/create', [
     'as' => 'admin.products.create',
     'uses' => 'ProductController@create',

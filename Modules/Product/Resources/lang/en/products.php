@@ -41,6 +41,7 @@ return [
         ],
         'base_image' => 'Base Image',
         'additional_images' => 'Additional Images',
+        'crew_image' => 'Crew Image',
         'downloadable_files' => 'Downloadable Files',
         'file' => 'File',
         'choose' => 'Choose',

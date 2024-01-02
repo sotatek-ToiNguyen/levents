@@ -17,9 +17,7 @@ class CreateMetaDataTranslationsTable extends Migration
             $table->increments('id');
             $table->integer('meta_data_id')->unsigned();
             $table->string('locale');
-            $table->string('meta_title')->nullable();
-            $table->text('meta_keywords')->nullable();
-            $table->text('meta_description')->nullable();
+            m
 
             $table->unique(['meta_data_id', 'locale']);
             $table->foreign('meta_data_id')->references('id')->on('meta_data')->onDelete('cascade');

@@ -292,6 +292,17 @@ class Product extends Model
     }
 
     /**
+     * Get the product's base image.
+     *
+     * @return \Modules\Media\Entities\File
+     */
+    public function getCrewImageAttribute()
+    {
+        return $this->files->where('pivot.zone', 'crew_image')->first() ?: new File;
+    }
+
+
+    /**
      * Get product's additional images.
      *
      * @return \Illuminate\Database\Eloquent\Collection
@@ -556,6 +567,15 @@ class Product extends Model
         ->where('slug', $slug)
         ->firstOrFail();
     }
+
+    public static function findByName($name)
+    {
+        return Product::select('product_translations.name', 'products.id')->
+        join('product_translations', 'products.id', '=', 'product_translations.product_id')
+        ->where('name', 'like', '%'. $name .'%')
+            ->limit(10)->get();
+    }
+
 
     public function clean()
     {

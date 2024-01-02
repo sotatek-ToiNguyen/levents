@@ -1,3 +1,48 @@
-#attachments,#images{margin-bottom:15px}.attachment-wrapper tr td:nth-child(2),.attachment-wrapper tr td:nth-child(3){min-width:200px}.attachment-wrapper tr td:nth-child(4){width:59px}.attachment-wrapper .choose-file{padding:10px 15px}
+#attachments,#images{margin-bottom:15px}
+.select-product{
+    width: 100%;
+    overflow-y: auto;
+    height: 50px;
+    padding: 10px 5px;
+    border: 1px solid #3333;
+    line-height: 20px;
+}
+.select-product ol{
+    padding-left: 0;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.select-product ol li{
+    background: #d9d9d9;
+    padding: 0px 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.option-product{
+    display: none;
+    position: absolute;
+    width: 400px;
+    top: 45px;
+    left: 15px;
+    background: #ffffff;
+    z-index: 2;
+    box-shadow: 0 0px 5px #ccc;
+    padding: 10px;
+}
+.option-product.active{
+    display: block;
+}
+.option-product ul{
+    list-style: none;
+}
+.option-product .search{
+    width: 100%;
+    border: 1px solid #333333;
+    padding-left: 10px;
+}
+.attachment-wrapper tr td:nth-child(2),.attachment-wrapper tr td:nth-child(3){min-width:200px}.attachment-wrapper tr td:nth-child(4){width:59px}.attachment-wrapper .choose-file{padding:10px 15px}
 
 /*# sourceMappingURL=product.css.map*/
