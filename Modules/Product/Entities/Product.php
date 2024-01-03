@@ -94,7 +94,7 @@ class Product extends Model
      * @var array
      */
     protected $appends = [
-        'base_image', 'formatted_price', 'rating_percent', 'is_in_stock',
+        'additional_images', 'base_image', 'formatted_price', 'rating_percent', 'is_in_stock',
         'is_out_of_stock', 'is_new', 'has_percentage_special_price', 'special_price_percent',
     ];
 
@@ -194,7 +194,7 @@ class Product extends Model
     public function scopeWithBaseImage($query)
     {
         $query->with(['files' => function ($q) {
-            $q->wherePivot('zone', 'base_image');
+            $q->wherePivotIn('zone', ['base_image', 'additional_images']);
         }]);
     }
 

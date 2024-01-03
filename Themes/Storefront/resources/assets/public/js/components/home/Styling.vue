@@ -5,7 +5,7 @@
         <h2 class="colection-title">Styling</h2>
         <a class="read-more-colection" href="">Xem tất cả</a>
       </div>
-      <div class="tab-content landscape-left-tab-products">
+      <div class="tab-content landscape-styling">
         <StylingCard v-for="post in posts" :key="post.id" :post="post"/>
       </div>
     </div>
@@ -54,12 +54,9 @@ export default {
       ]
     };
   },
-  selector() {
-    return $('.landscape-left-tab-products');
-  },
 
-  slickOptions() {
-    return {
+  mounted() {
+    $('.landscape-styling').slick({
       rows: 0,
       dots: false,
       arrows: true,
@@ -122,8 +119,9 @@ export default {
           },
         },
       ],
-    };
+    })
   },
+
 
 };
 </script>

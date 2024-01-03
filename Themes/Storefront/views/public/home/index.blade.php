@@ -17,7 +17,7 @@
     @endif
 
     @if (setting('storefront_product_tabs_1_section_enabled'))
-        <product-tabs-one :data="{{ json_encode($productTabsOne) }}"></product-tabs-one>
+        <product-tabs-one-home :data="{{ json_encode($productTabsOne) }}"></product-tabs-one-home>
     @endif
     <colection></colection>
     <styling></styling>

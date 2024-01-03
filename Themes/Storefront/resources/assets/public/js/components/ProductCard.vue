@@ -1,9 +1,14 @@
 <template>
     <div class="product-card">
         <div class="product-card-top">
-            <a :href="productUrl" class="product-image">
-                <img :src="baseImage" :class="{ 'image-placeholder': ! hasBaseImage }" alt="product image">
-            </a>
+          <div v-if="hasMutiBaseImage === true" class="thumnail-image-data">
+            <div  v-for="base in baseImages" :key="base.id" >
+              <img :src="base.path" :class="{ 'image-placeholder': ! hasBaseImage }" alt="product image">
+            </div>
+          </div>
+          <div  v-else class="product-image">
+            <img :src="baseImage" :class="{ 'image-placeholder': ! hasBaseImage }" alt="product image">
+          </div>
 
             <div class="product-card-actions">
                 <button
@@ -88,5 +93,18 @@
         ],
 
         props: ['product'],
-    };
+
+      mounted() {
+        $('.thumnail-image-data:not(.slick-slider)').slick({
+          rows: 0,
+          dots: false,
+          arrows: true,
+          infinite: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rtl: window.FleetCart.rtl,
+        });
+        console.log(22)
+      },
+    }
 </script>

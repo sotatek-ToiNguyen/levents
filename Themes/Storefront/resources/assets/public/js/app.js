@@ -42,6 +42,7 @@ import MyWishlist from './components/account/wishlist/Index';
 import MyAddresses from './components/account/addresses/Index';
 import Styling from "./components/home/Styling";
 import ProductTabsOneDetail from "./components/home/ProductTabsOneDetail";
+import ProductTabsOneHome from "./components/home/ProductTabsOneHome";
 
 Vue.prototype.route = route;
 Vue.prototype.$notify = notify;
@@ -63,6 +64,7 @@ Vue.component('home-features', HomeFeatures);
 Vue.component('featured-categories', FeaturedCategories);
 Vue.component('banner-three-column-full-width', BannerThreeColumnFullWidth);
 Vue.component('product-tabs-one', ProductTabsOne);
+Vue.component('product-tabs-one-home', ProductTabsOneHome);
 Vue.component('colection', Colection);
 Vue.component('colection-video', ColectionVideo);
 Vue.component('colection-image', ColectionImage);

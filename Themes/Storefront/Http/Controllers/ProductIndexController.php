@@ -42,6 +42,7 @@ class ProductIndexController
         return Category::findOrNew(setting("{$settingPrefix}_category_id"))
             ->products()
             ->forCard()
+            ->limit(12)
             ->get();
     }
 

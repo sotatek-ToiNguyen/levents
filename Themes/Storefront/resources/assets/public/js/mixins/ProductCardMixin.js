@@ -24,12 +24,22 @@ export default {
             return this.product.base_image.length !== 0;
         },
 
+        hasMutiBaseImage() {
+            return this.product.additional_images.length !== 0;
+        },
+
         baseImage() {
             if (this.hasBaseImage) {
                 return this.product.base_image.path;
             }
 
             return `${window.FleetCart.baseUrl}/themes/storefront/public/images/image-placeholder.png`;
+        },
+
+        baseImages() {
+            if (this.hasMutiBaseImage) {
+                return this.product.additional_images;
+            }
         },
 
         inWishlist() {

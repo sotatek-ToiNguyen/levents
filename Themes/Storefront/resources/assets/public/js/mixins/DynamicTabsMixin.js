@@ -38,16 +38,10 @@ export default {
                 method: 'GET',
                 url: activeTab.url,
             }).then((products) => {
-                if (this.selector().hasClass('slick-initialized')) {
-                    this.selector().slick('unslick');
-                }
 
                 this.products = products;
                 this.loading = false;
 
-                this.$nextTick(() => {
-                    this.selector().slick(this.slickOptions());
-                });
             });
         },
     },

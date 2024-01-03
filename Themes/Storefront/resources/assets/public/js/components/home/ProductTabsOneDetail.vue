@@ -1,5 +1,5 @@
 <template>
-    <section class="landscape-tab-products-wrap clearfix">
+    <section class="landscape-tab-products-wrap product-detail clearfix">
         <div class="container">
             <div class="tab-products-header clearfix">
                 <ul class="tabs float-left">
@@ -101,7 +101,7 @@ import ProductCard from '../ProductCard.vue';
       },
       mounted() {
         this.changeCategory
-        let url = 'http://localhost:8787/storefront/tab-products/sections/1/tabs/' + this.catid
+        let url = '/storefront/tab-products/sections/1/tabs/' + this.catid
         $.ajax({
             method: 'GET',
             url,

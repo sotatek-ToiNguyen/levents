@@ -87,7 +87,7 @@
     }
 
     .product-image {
-        height: 180px;
+        //height: 180px;
 
         .image-placeholder {
             height: 85px;
@@ -176,7 +176,7 @@
         position: relative;
         display: flex;
         height: 90px;
-        margin-top: auto;
+        margin-top: 0;
         padding-bottom: 9px;
         flex-direction: column;
         justify-content: flex-end;
@@ -279,7 +279,7 @@
 @media screen and (max-width: 1800px) {
     .product-card {
         .product-image {
-            height: 160px;
+            //height: 160px;
         }
     }
 }
