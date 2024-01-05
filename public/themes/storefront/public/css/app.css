@@ -27852,6 +27852,14 @@ h1, h2, h3, h4, h5, h6, p, span, body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+}
+.home-tabb .tab-content.landscape-left-tab-products.active {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
 }
 .home-tabb .tab-content.landscape-left-tab-products .product-card {
   width: calc(25% - 20px);

@@ -5,9 +5,9 @@
                 <ul class="tabs float-left">
                     <li
                         v-for="(tab, index) in tabs"
+                        :data-href="index"
                         :key="index"
                         :class="classes(tab)"
-                        @click="changeData(tab)"
                     >
                         {{ tab.label }}
                     </li>
@@ -16,8 +16,12 @@
             </div>
 
 
-            <div class="tab-content landscape-left-tab-products">
+            <div class="tab-content landscape-left-tab-products active">
                 <ProductCardHome v-for="product in products" :key="product.id" :product="product"/>
+            </div>
+
+            <div class="tab-content landscape-left-tab-products">
+                <ProductCardHome v-for="product in products2" :key="product.id" :product="product"/>
             </div>
 
             <dynamic-tab

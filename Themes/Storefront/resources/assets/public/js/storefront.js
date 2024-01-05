@@ -2,6 +2,16 @@ require('./vendors/vendors');
 
 $(() => {
 
+    $('.tab-products-header .tab-item').on('click',function (){
+        $('.tab-products-header .tab-item').removeClass('active');
+        $(this).addClass('active')
+        let id = $(this).attr('data-href')
+        console.log(id);
+        $('.tab-content.landscape-left-tab-products').removeClass('active');
+        console.log($('.tab-content.landscape-left-tab-products'));
+        $('.tab-content.landscape-left-tab-products').eq(id).addClass('active');
+    })
+
     $('#myModal .close').on('click', function(){
         $("#myModal").removeClass("in");
     })
