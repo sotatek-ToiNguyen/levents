@@ -23677,11 +23677,7 @@ textarea.form-control {
   }
 
   .home-slider .slide {
-    height: 600px;
     background-size: cover;
-  }
-  .home-slider .slide img {
-    display: none;
   }
 }
 @media screen and (max-width: 450px) {
