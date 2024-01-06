@@ -11,6 +11,7 @@ class CartController
      */
     public function index()
     {
-        return view('public.cart.index');
+        return redirect('/');
+//        return view('public.cart.index');
     }
 }
