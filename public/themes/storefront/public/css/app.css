@@ -27919,6 +27919,10 @@ h1, h2, h3, h4, h5, h6, p, span, body {
 }
 
 @media screen and (max-width: 600px) {
+  .header-wrap-inner .container a img {
+    width: 150px;
+  }
+
   .product-detail .product-card .product-card-top {
     height: 195px;
   }
