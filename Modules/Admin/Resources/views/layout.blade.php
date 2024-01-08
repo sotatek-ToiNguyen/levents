@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto:400,500" rel="stylesheet">
 
         @foreach ($assets->allCss() as $css)
-            <link media="all" type="text/css" rel="stylesheet" href="{{ v($css) }}">
+            <link media="all" type="text/css" rel="stylesheet" href="{{ secure_asset(v($css)) }}">
         @endforeach
 
         @stack('styles')
