@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto:400,500" rel="stylesheet">
 
         @foreach ($assets->allCss() as $css)
-            <link media="all" type="text/css" rel="stylesheet" href="{{ v($css) }}">
+            <link media="all" type="text/css" rel="stylesheet" href="{{ str_replace('http:', '', v($css)) }}">
         @endforeach
 
         @stack('styles')
@@ -50,7 +50,7 @@
         @include('admin::partials.confirmation_modal')
 
         @foreach ($assets->allJs() as $js)
-            <script src="{{ v($js) }}"></script>
+            <script src="{{ str_replace('http:', '', v($js)) }}"></script>
         @endforeach
 
         @stack('scripts')
