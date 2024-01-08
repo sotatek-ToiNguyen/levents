@@ -125,7 +125,7 @@ trait HasCrudActions
                 ->withSuccess(trans('admin::messages.resource_saved', ['resource' => $this->getLabel()]));
         }
 
-        return redirect()->route("{$this->getRoutePrefix()}.index")
+        return redirect()->route("admin.products.edit", $id)
             ->withSuccess(trans('admin::messages.resource_saved', ['resource' => $this->getLabel()]));
     }
 

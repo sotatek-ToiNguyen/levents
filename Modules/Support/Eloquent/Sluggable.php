@@ -29,8 +29,13 @@ trait Sluggable
         if (is_null($value)) {
             $value = $this->getAttribute($this->slugAttribute);
         }
-
-        $this->attributes['slug'] = $this->generateSlug($value);
+        $slug =  $this->generateSlug($value);
+        if(strlen($slug) > 41){
+            $firstPart = substr($slug, 0, 41);
+            $remainingPart = md5(substr($slug, 42) . time());
+            $slug = $firstPart . $remainingPart;
+        }
+        $this->attributes['slug'] = $slug;
     }
 
     /**

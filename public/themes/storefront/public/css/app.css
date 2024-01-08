@@ -21653,6 +21653,9 @@ textarea.form-control {
   .header-column-left {
     width: auto;
   }
+  .header-column-left a img {
+    width: 150px;
+  }
 }
 .header-search-wrap {
   display: none;
