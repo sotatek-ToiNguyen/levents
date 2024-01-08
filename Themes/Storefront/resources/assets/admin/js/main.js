@@ -20,10 +20,11 @@ $('#storefront_mail_theme_color').on('change', (e) => {
 });
 
 $('#storefront-settings-edit-form').on('click', '.panel-image', (e) => {
-    let picker = new MediaPicker({ type: 'image' });
+    let picker = new MediaPicker();
 
     picker.on('select', (file) => {
         $(e.currentTarget).find('i').remove();
+        $(e.currentTarget).find('video').attr('src', file.path).removeClass('hide');
         $(e.currentTarget).find('img').attr('src', file.path).removeClass('hide');
         $(e.currentTarget).find('.banner-file-id').val(file.id);
     });

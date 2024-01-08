@@ -14,7 +14,13 @@
         top: -40px;
     }
 }
-
+.colection-video .container video, .colection-video .container img {
+  width: 100%;
+}
+.content-ww{
+  display: flex;
+  align-content: center;
+}
 @media screen and (max-width: $md) {
     .landscape-tab-products-wrap {
         .tab-products-header {
@@ -79,6 +85,9 @@
     .colection-video .container .tab-content {
         padding-left: 0px;
         text-align: center;
+    }
+  .colection-video .content-ww{
+    order: 2;
     }
     .colection-video .container .tab-content-left {
         padding-right: 0px;

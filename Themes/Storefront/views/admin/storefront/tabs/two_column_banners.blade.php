@@ -7,13 +7,13 @@
 
     <div class="tab-content clearfix">
         <div class="panel-wrap">
-            @include('admin.storefront.tabs.partials.single_banner', [
+            @include('admin.storefront.tabs.partials.video_banner', [
                 'label' => trans('storefront::storefront.form.banner_1'),
                 'name' => 'storefront_two_column_banners_1',
                 'banner' => $banners['banner_1'],
             ])
 
-            @include('admin.storefront.tabs.partials.single_banner', [
+            @include('admin.storefront.tabs.partials.image_banner', [
                 'label' => trans('storefront::storefront.form.banner_2'),
                 'name' => 'storefront_two_column_banners_2',
                 'banner' => $banners['banner_2'],

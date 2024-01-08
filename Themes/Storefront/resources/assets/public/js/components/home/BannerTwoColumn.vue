@@ -1,27 +1,45 @@
 <template>
-    <section class="banner-wrap two-column-banner">
-        <div class="container">
+    <section class="banner-wrap two-column-banner colection-video">
+        <div class="container banner-link">
             <div class="row">
-                <div class="col-md-9">
-                    <a
-                        :href="data.banner_1.call_to_action_url"
-                        class="banner"
-                        :target="data.banner_1.open_in_new_window ? '_blank' : '_self'"
-                    >
-                        <img :src="data.banner_1.image.path" alt="banner">
-                    </a>
+                <div class="col-lg-9 col-sm-18">
+                    <video playsinline="true" controls="controls" autoplay="autoplay" loop="loop" preload="none" muted="muted" poster="">
+                      <source :src="data.banner_1.image.path" type="video/mp4">
+                    </video>
                 </div>
-
-                <div class="col-md-9">
-                    <a
-                        :href="data.banner_2.call_to_action_url"
-                        class="banner"
-                        :target="data.banner_2.open_in_new_window ? '_blank' : '_self'"
-                    >
-                        <img :src="data.banner_2.image.path" alt="banner">
+              <div class="col-lg-9 col-sm-18 content-ww">
+                  <div class="tab-content">
+                      <h2>
+                      {{data.banner_1.title}}
+                      </h2>
+                    <div class="image-with-text__text rte text-2-sm body h3">
+                      <p>
+                        {{data.banner_1.description}}
+                      </p>
+                    </div>
+                    <a data-prefetch="" :href="data.banner_1.call_to_action_url" class="button button--large button-lg button--primary">
+                      Xem thêm
                     </a>
-                </div>
+                  </div>
+              </div>
             </div>
+        </div>
+        <div class="container banner-link">
+            <div class="row">
+                  <div class="col-lg-9 col-sm-18 content-ww">
+                        <div class="tab-content tab-content-left"><h2>
+                        {{data.banner_2.title}}
+                        </h2> <div class="image-with-text__text rte text-2-sm body h3">
+                          <p>{{data.banner_1.description}}</p>
+                        </div> <a data-prefetch="" href="/collections/all" class="button button--large button-lg button--primary">
+                          Xem thêm
+                        </a>
+                        </div>
+                    </div>
+                  <div class="col-lg-9 col-sm-18">
+                    <img :src="data.banner_2.image.path" alt="banner">
+                  </div>
+          </div>
         </div>
     </section>
 </template>

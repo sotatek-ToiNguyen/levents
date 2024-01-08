@@ -23675,12 +23675,7 @@ textarea.form-control {
   }
 
   .home-slider .slide {
-    background: url(https://levents.asia/cdn/shop/files/BANNER_HOMEPAGE_-_MOBILE_-_2.jpg?v=1703352127&width=375);
-    height: 600px;
     background-size: cover;
-  }
-  .home-slider .slide img {
-    display: none;
   }
 }
 @media screen and (max-width: 450px) {
@@ -23797,7 +23792,7 @@ textarea.form-control {
   width: 50%;
 }
 .colection-video .container .tab-content {
-  padding-right: 100px;
+  padding-right: 50px;
 }
 .colection-video .container .tab-content p {
   font-weight: 100;
@@ -23812,8 +23807,7 @@ textarea.form-control {
   color: #fff;
 }
 .colection-video .container .tab-content-left {
-  padding-right: 0px;
-  padding-left: 100px;
+  padding-right: 50px;
 }
 
 @media screen and (min-width: 1650px) {
@@ -24157,6 +24151,15 @@ textarea.form-control {
   top: -40px;
 }
 
+.colection-video .container video, .colection-video .container img {
+  width: 100%;
+}
+
+.content-ww {
+  display: flex;
+  align-content: center;
+}
+
 @media screen and (max-width: 767px) {
   .landscape-tab-products-wrap .tab-products-header {
     text-align: center;
@@ -24222,7 +24225,7 @@ textarea.form-control {
   }
 
   .colection-video .container .tab-content {
-    padding-right: 0px;
+    padding-right: 50px;
     text-align: center;
   }
 
@@ -27729,6 +27732,10 @@ textarea.form-control {
   font-display: swap;
   src: url("//levents.asia/cdn/shop/files/SVN-Futura-Bold.woff2?v=17958330357418942070") format("woff2");
 }
+.banner-link {
+  margin-top: 50px;
+}
+
 @font-face {
   font-family: Futura;
   font-weight: 400;

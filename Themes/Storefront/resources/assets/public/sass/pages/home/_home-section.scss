@@ -94,7 +94,13 @@
             width: 50%;
         }
         .tab-content{
-            padding-left: 100px;
+            padding-left: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2{
+                margin-bottom: 20px;
+            }
             p{
                 font-weight: 100;
             }
@@ -109,8 +115,7 @@
             }
         }
         .tab-content-left{
-            padding-left: 0px;
-            padding-right: 100px;
+            padding-left: 50px;
         }
     }
 }
