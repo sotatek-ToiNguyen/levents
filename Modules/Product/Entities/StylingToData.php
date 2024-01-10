@@ -7,6 +7,7 @@ use Modules\Support\Eloquent\Model;
 
 class StylingToData extends Model
 {
+    public $timestamps = false;
     protected $table = "styling_to_datas";
     /**
      * The attributes that are mass assignable.

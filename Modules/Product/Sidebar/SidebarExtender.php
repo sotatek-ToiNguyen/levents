@@ -33,6 +33,11 @@ class SidebarExtender extends BaseSidebarExtender
                         $this->auth->hasAccess('admin.products.index')
                     );
                 });
+
+                $item->item(trans('product::sidebar.styling'), function (Item $item) {
+                    $item->weight(5);
+                    $item->route('admin.products.styling.index');
+                });
             });
         });
     }

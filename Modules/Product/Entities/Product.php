@@ -570,10 +570,13 @@ class Product extends Model
 
     public static function findByName($name)
     {
-        return Product::select('product_translations.name', 'products.id')->
-        join('product_translations', 'products.id', '=', 'product_translations.product_id')
-        ->where('name', 'like', '%'. $name .'%')
-            ->limit(10)->get();
+        return  Product::with([
+            'categories', 'tags', 'attributes.attribute.attributeSet',
+            'options', 'files', 'relatedProducts', 'upSellProducts',
+        ])->join('product_translations', 'products.id', '=', 'product_translations.product_id')
+            ->where('product_translations.name', 'like', '%' . $name . '%')
+            ->limit(10)
+            ->get();
     }
 
 

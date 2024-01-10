@@ -1,7 +1,10 @@
 @extends('admin::layout')
 @component('admin::components.page.header')
     @slot('title', 'Styling')
-
+    @push('scripts')
+        <!-- Thêm các đường dẫn tới các file JS cần sử dụng -->
+        <script src="{{ asset('/modules/product/admin/js/styling.js?v=3.0.0') }}"></script>
+    @endpush
     <li class="active">Styling</li>
 @endcomponent
 
@@ -16,8 +19,12 @@
     <section class="content">
 
     <div class="row">
-        <div class="btn-group pull-right">
-
+        <div class="btn-group pull-left">
+            <div class="dataTables_length" id="DataTables_Table_0_length">
+                <button type="button" class="btn btn-default btn-delete delete-styling">
+                    Delete
+                </button>
+            </div>
         </div>
     </div>
 
@@ -27,10 +34,7 @@
                 <table class="table table-striped table-hover ">
                     <thead><tr>
                         <th>
-                            <div class="checkbox">
-                                <input type="checkbox" class="select-all" id="styling-index-select-all">
-                                <label for="styling-index-select-all"></label>
-                            </div>
+
                         </th>
 
                         <th>ID</th>
@@ -44,11 +48,15 @@
                             <tr role="row" class="odd clickable-row">
                                 <td>
                                     <div class="checkbox">
-                                        <input type="checkbox" class="select-row" value="{{$styling->id}}" id="ibVcf96sE79fRF2f">
-                                        <label for="ibVcf96sE79fRF2f"></label>
+                                        <input type="checkbox" class="select-row" value="{{$styling->id}}" id="ib_{{$styling->id}}">
+                                        <label for="ib_{{$styling->id}}"></label>
                                     </div>
                                 </td>
-                                <td style="cursor: pointer;">{{$styling->id}}</td>
+                                <td style="cursor: pointer;">
+                                    <a href="{{route('admin.styling.edit', $styling->id)}}">
+                                    {{$styling->id}}
+                                    </a>
+                                </td>
                                 <td style="cursor: pointer;"><div class="thumbnail-holder">
                                         <img width="70px" src="{{$styling->files->path}}" alt="thumbnail">
                                     </div>

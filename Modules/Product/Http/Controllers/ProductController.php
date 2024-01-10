@@ -4,6 +4,9 @@ namespace Modules\Product\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Modules\Media\Entities\File;
+use Modules\Product\Entities\Styling;
+use Modules\Product\Entities\StylingToData;
 use Modules\Review\Entities\Review;
 use Modules\Product\Entities\Product;
 use Modules\Product\Events\ProductViewed;
@@ -75,5 +78,37 @@ class ProductController extends Controller
         }
 
         return Review::countAndAvgRating($product);
+    }
+
+    /**
+     * Show the specified resource.
+     *
+     * @param string $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function stylingList()
+    {
+        $page = Styling::orderBy('id', 'DESC')->get();
+        return view('public.styling.list', compact(['page']));
+    }
+
+    /**
+     * Show the specified resource.
+     *
+     * @param string $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function stylingIndex($slug)
+    {
+        $page = Styling::where('slug', $slug)->first();
+        $file = File::findOrFail($page->base_image_id);
+        $fileIds = StylingToData::where('styling_id', $page->id)
+            ->whereNotNull('file_id')->select('file_id')
+            ->get();
+        $files = File::whereIn('id', $fileIds)->get();
+        $productIds = StylingToData::where('styling_id', $page->id)
+            ->whereNotNull('product_id')->pluck('product_id')->toArray();;
+        $productsSelect = Product::whereIn('id', $productIds)->get();
+        return view('public.styling.show', compact(['page', 'file', 'files', 'productsSelect']));
     }
 }
