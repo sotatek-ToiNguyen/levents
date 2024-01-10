@@ -17,6 +17,7 @@
     @endforeach
 @endpush
 @section('breadcrumb')
+    <li class="" ><a href="/blogs/outfit">Outfit</a></li>
     <li class="active">{{$page->name}}</li>
 @endsection
 
