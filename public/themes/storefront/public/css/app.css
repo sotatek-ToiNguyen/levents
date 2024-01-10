@@ -19856,6 +19856,15 @@ span.flatpickr-weekday {
     margin: -4px auto 0 0;
   }
 }
+.slider-styling .vertical-product-card {
+  display: flex !important;
+  align-items: center;
+}
+.slider-styling .vertical-product-card .product-image, .slider-styling .vertical-product-card .image-placeholder {
+  width: 154px !important;
+  height: 154px !important;
+}
+
 .vertical-product-card {
   display: flex;
   margin-bottom: 20px;
@@ -23755,6 +23764,7 @@ textarea.form-control {
   font-weight: 100;
   padding-top: 15px;
   display: block;
+  text-align: center;
 }
 .colection .post-name h6 {
   font-weight: 100;
@@ -27755,7 +27765,7 @@ h1, h2, h3, h4, h5, h6, p, span, body {
 }
 .crew .crew-item {
   width: 25%;
-  margin: 0 10px;
+  margin: 10px;
 }
 .crew .crew-item:hover {
   cursor: pointer;
@@ -27791,10 +27801,11 @@ h1, h2, h3, h4, h5, h6, p, span, body {
 }
 
 #myModal .modal-content {
-  width: 70%;
+  width: 50%;
   margin: auto;
   top: 50%;
   display: flex;
+  align-items: center;
   flex-direction: unset;
   transform: translateY(-50%);
 }
@@ -27918,6 +27929,23 @@ h1, h2, h3, h4, h5, h6, p, span, body {
   padding: 0px;
 }
 
+.image-outfix {
+  width: 25%;
+  padding: 10px;
+}
+.image-outfix img {
+  width: 100%;
+}
+
+.outfit .post-card {
+  width: 25%;
+  padding: 10px 10px 20px;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 600px) {
   .header-wrap-inner .container a img {
     width: 150px;
@@ -27951,5 +27979,9 @@ h1, h2, h3, h4, h5, h6, p, span, body {
 
   #myModal .modal-content .thumbnail-name, #myModal .modal-content .product-card-modal {
     width: 100%;
+  }
+
+  .outfit .post-card {
+    width: 50%;
   }
 }

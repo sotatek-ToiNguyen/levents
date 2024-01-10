@@ -1,7 +1,7 @@
 @extends('admin::layout')
 
 @component('admin::components.page.header')
-    @slot('title', 'Create Styling'))
+    @slot('title', 'Create Styling')
 
     <li><a href="{{ route('admin.products.styling.index') }}">Styling</a></li>
     <li class="active">Create Styling</li>
@@ -15,7 +15,7 @@
 @endcomponent
 
 @section('content')
-    <form method="POST" action="{{ route('admin.products.store') }}" class="form-horizontal" id="product-create-form" enctype="multipart/form-data" novalidate>
+    <form method="POST" action="{{ request()->routeIs('admin.products.styling.create') ? route('admin.products.styling.store') : route('admin.styling.update', $styling->id) }}" class="form-horizontal" id="styling-create-form" enctype="multipart/form-data" novalidate>
         {{ csrf_field() }}
 
         <div class="accordion-content clearfix">
@@ -55,7 +55,7 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-2 control-label text-left">Name<span class="m-l-5 text-red">*</span></label>
                                 <div class="col-md-10">
-                                    <input name="name" class="form-control " id="name" value="" labelcol="2" type="text">
+                                    <input required name="name" class="form-control " id="name" value="{{isset($styling) ? $styling->name : ''}}" labelcol="2" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -85,10 +85,14 @@
                                 <div class="col-md-10 chose-product">
                                     <div class="select-product">
                                         <ol>
-                                            <li id="check-1">
-                                                <lable>1</lable>
-                                                <i onclick="remoteProduct(event, 1)" class="fa fa-times"></i>
-                                            </li>
+                                            @if(isset($productsSelect))
+                                                @foreach($productsSelect as $pro)
+                                                    <li id="check-{{$pro->id}}">
+                                                        <lable>{{$pro->name}}</lable>
+                                                        <i onclick="remoteProduct(event, {{$pro->id}})" class="fa fa-times"></i>
+                                                    </li>
+                                                @endforeach
+                                            @endif
                                         </ol>
                                     </div>
                                     <div class="option-product">
@@ -96,7 +100,7 @@
                                         <ul>
                                             @foreach($products as $product)
                                                 <li>
-                                                    <input onclick="isCheckedById({{$product->id}}, '{{$product->name}}')" type="checkbox" value="{{$product->id}}">
+                                                    <input {{isset($productIds) && in_array($product->id, $productIds) ? "checked" : ''}} onclick="isCheckedById({{$product->id}}, '{{$product->name}}')" type="checkbox" value="{{$product->id}}">
                                                     {{$product->name}}
                                                 </li>
                                             @endforeach
@@ -107,11 +111,15 @@
                             <div class="form-group">
                                 <label for="body" class="col-md-2 control-label text-left">Body<span class="m-l-5 text-red">*</span></label>
                                 <div class="col-md-10">
-                                    <textarea name="description" class="form-control  wysiwyg" id="body" rows="10" cols="10" labelcol="2" aria-hidden="true"></textarea>
+                                    <textarea required name="description" class="form-control  wysiwyg" id="body" rows="10" cols="10" labelcol="2" aria-hidden="true">
+                                        {{isset($styling) ? $styling->description : ''}}
+                                    </textarea>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade in " id="seo"><h3 class="tab-content-title">SEO</h3><div class="row">
+                        <div class="tab-pane fade in " id="seo">
+                            <h3 class="tab-content-title">SEO</h3>
+                            <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="meta-title" class="col-md-3 control-label text-left">
@@ -119,7 +127,7 @@
                                         </label>
 
                                         <div class="col-md-9">
-                                            <input type="text" name="meta_title" class="form-control" id="meta-title" value="">
+                                            <input type="text" name="meta_title" class="form-control" id="meta-title" value="{{isset($styling) ? $styling->meta_title : ''}}">
                                         </div>
                                     </div>
 
@@ -129,11 +137,12 @@
                                         </label>
 
                                         <div class="col-md-9">
-                                            <textarea name="meta_description" class="form-control" id="meta-description" rows="10" cols="10"></textarea>
+                                            <textarea name="meta_description" class="form-control" id="meta-description" rows="10" cols="10">{{isset($styling) ? $styling->meta_description : ''}}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <button type="submit" class="btn btn-primary" data-loading="">
@@ -145,7 +154,11 @@
                 </div>
             </div>
         </div>
-        </div>
+        @if(isset($productsSelect))
+            @foreach($productsSelect as $prod)
+                <input type="hidden" name="productid[]" value="{{$prod['id']}}">
+            @endforeach
+        @endif
     </form>
 @endsection
 

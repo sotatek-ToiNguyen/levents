@@ -1,8 +1,7 @@
 #attachments,#images{margin-bottom:15px}
 .select-product{
     width: 100%;
-    overflow-y: auto;
-    height: 50px;
+    height: auto;
     padding: 10px 5px;
     border: 1px solid #3333;
     line-height: 20px;

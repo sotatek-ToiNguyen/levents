@@ -18,6 +18,27 @@ Route::get('styling/create', [
     'uses' => 'ProductController@stylingCreate',
 ]);
 
+Route::post('styling', [
+    'as' => 'admin.products.styling.store',
+    'uses' => 'ProductController@stylingSave',
+]);
+
+Route::get('styling/edit/{id}', [
+    'as' => 'admin.styling.edit',
+    'uses' => 'ProductController@stylingEdit',
+]);
+
+Route::post('styling/update/{id}', [
+    'as' => 'admin.styling.update',
+    'uses' => 'ProductController@stylingUpdate',
+]);
+
+
+Route::delete('styling/{ids}', [
+    'as' => 'admin.styling.destroy',
+    'uses' => 'ProductController@stylingDestroy',
+]);
+
 Route::get('products/create', [
     'as' => 'admin.products.create',
     'uses' => 'ProductController@create',

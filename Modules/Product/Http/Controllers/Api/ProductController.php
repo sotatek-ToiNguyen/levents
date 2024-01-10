@@ -4,6 +4,7 @@ namespace Modules\Product\Http\Controllers\Api;
 
 use Illuminate\Routing\Controller;
 use Modules\Product\Entities\Product;
+use Modules\Product\Entities\Styling;
 use Modules\Product\Http\Middleware\SetProductSortOption;
 
 class ProductController extends Controller
@@ -27,8 +28,14 @@ class ProductController extends Controller
 
     public function showApi($slug)
     {
-        $product = Product::findBySlug($slug);
+        $product =  Product::findByName($slug);
         return $product;
     }
 
+
+    public function showStylingApi(){
+        return Styling::select('styling.*', 'files.*')
+            ->join('files', 'styling.base_image_id', '=', 'files.id')
+            ->limit(10)->get();
+    }
 }

@@ -1,3 +1,13 @@
+.slider-styling{
+    .vertical-product-card {
+        display: flex !important;
+        align-items: center;
+        .product-image, .image-placeholder{
+            width: 154px !important;
+            height: 154px !important;
+        }
+    }
+}
 .vertical-product-card {
     display: flex;
     margin-bottom: 20px;

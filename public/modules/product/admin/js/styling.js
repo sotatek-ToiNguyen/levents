@@ -37,7 +37,22 @@ function remoteProduct(event, id) {
     event.stopPropagation()
     $('.select-product ol li#check-' + id).remove();
     $("input[value=" + id + "]").prop('checked', false);
+    $('#styling-create-form input[name="productid[]"][value="'+ id +'"]').remove();
 }
+
+$('.delete-styling').click(function (){
+    let ids = $('.checkbox input:checked').map(function() {
+        return $(this).val();
+    }).get();
+    $.ajax({
+        type: "DELETE",
+        url: route("admin.styling.destroy", {ids: ids.join()}),
+        success: () => {
+            location.reload();
+        }
+    })
+})
+
 function isCheckedById(id, name) {
 
     $('.option-product input[type="text"]').focus()
@@ -45,8 +60,10 @@ function isCheckedById(id, name) {
     console.log(checked)
     if (checked == 1) {
         $('.select-product ol').append('<li id="check-' + id +'">' + name + '<i onclick="remoteProduct(event,'+ id +')" class="fa fa-times"></i>'+'</li>')
+        $('#styling-create-form').append('<input type="hidden" name="productid[]" value="' + id +'"></input>')
         return true;
     } else {
+        $('#styling-create-form input[name="productid[]"][value="'+ id +'"]').remove();
         $('.select-product ol li#check-' + id).remove()
     }
 }
@@ -62,7 +79,17 @@ $('.option-product .search').on('input', function() {
             type: 'GET',
             url: route('productsApi.show', value),
             success(response) {
-                console.log(response)
+                $('.option-product ul li').remove();
+                if(response){
+                    for(const i of response){
+                        $('.option-product ul').append(
+                            '<li>' +
+                            `<input type="checkbox" value="${i['id']}" onclick="isCheckedById(${i['id']}, '${i["name"]}')"> ` +
+                            i["name"] +
+                            '</li>'
+                        )
+                    }
+                }
             }
         })
     }, 1000);

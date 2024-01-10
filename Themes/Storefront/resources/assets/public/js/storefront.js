@@ -2,6 +2,26 @@ require('./vendors/vendors');
 
 $(() => {
 
+    $('.slider-styling').slick({
+        rows: 0,
+        dots: false,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        centerMode: true,
+        rtl: window.FleetCart.rtl,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ]
+    })
+
     $('.tab-products-header .tab-item').on('click',function (){
         $('.tab-products-header .tab-item').removeClass('active');
         $(this).addClass('active')

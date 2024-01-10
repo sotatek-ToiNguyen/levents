@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6, p, span, body {
     justify-content: center;
     .crew-item {
         width: 25%;
-        margin: 0 10px;
+        margin: 10px;
         &:hover{
             cursor: pointer;
         }
@@ -146,10 +146,11 @@ h1, h2, h3, h4, h5, h6, p, span, body {
     }
 }
 #myModal .modal-content{
-    width: 70%;
+    width: 50%;
     margin: auto;
     top: 50%;
     display: flex;
+    align-items: center;
     flex-direction: unset;
    transform: translateY(-50%);
 
@@ -264,6 +265,22 @@ img{
 .tab-content .thumnail-image-data  .slick-list {
     padding: 0px;
 }
+.image-outfix{
+    width: 25%;
+    padding: 10px;
+    img{
+        width: 100%;
+    }
+}
+.outfit .post-card{
+    width: 25%;
+    padding: 10px 10px 20px;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
 @media screen and (max-width: 600px) {
     .header-wrap-inner{
         .container a img{
@@ -277,21 +294,25 @@ img{
         width: calc(50% - 10px);
         margin: 5px 5px;
     }
-.crew {
-    display: flex;
-    .crew-item {
-        width: calc(50% - 20px);
-        margin: 0 10px 10px;
+    .crew {
+        display: flex;
+        .crew-item {
+            width: calc(50% - 20px);
+            margin: 0 10px 10px;
+        }
+    }
+      #myModal .modal-content {
+          width: calc(100% - 20px);
+          flex-direction: column;
+      }
+    #myModal .modal-content .thumbnail-name {
+    display: none;
+    }
+    #myModal .modal-content .thumbnail-name, #myModal .modal-content .product-card-modal {
+        width: 100%;
+    }
+    .outfit .post-card {
+        width: 50%;
     }
 }
-  #myModal .modal-content {
-      width: calc(100% - 20px);
-      flex-direction: column;
-  }
-#myModal .modal-content .thumbnail-name {
-display: none;
-}
-#myModal .modal-content .thumbnail-name, #myModal .modal-content .product-card-modal {
-    width: 100%;
-}
-}
+

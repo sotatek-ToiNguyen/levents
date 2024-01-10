@@ -1,17 +1,17 @@
 <template>
     <div class="post-card">
         <div class="product-card-top">
-            <a :href="post.link" class="product-image">
-                <img :src="post.img" alt="product image">
+            <a :href="route('styling.index', post.slug)" class="product-image">
+                <img :src="'storage/' + post.path" alt="product image">
             </a>
         </div>
 
         <div class="product-card-middle">
-            <a :href="post.link" class="post-name">
-                <h6>{{ post.title }}</h6>
+            <a :href="route('styling.index', post.slug)" class="post-name">
+                <h6>{{ post.name }}</h6>
             </a>
             <button>
-              <a :href="post.link" class="post-name">
+              <a :href="route('styling.index', post.slug)" class="post-name">
                 Xem bộ phối
               </a>
             </button>
