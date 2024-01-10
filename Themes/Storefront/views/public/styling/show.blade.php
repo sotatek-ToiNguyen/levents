@@ -45,25 +45,10 @@
                             <a href="{{route('products.show', $prod->slug)}}" class="product-name">
                                 <h6>{{ $prod->name }}</h6>
                             </a>
-
-                            <div class="product-price">{{$prod->formatted_price}}</div>
-                            <div class="product-rating">
-                                <div class="back-stars">
-                                    <i class="las la-star"></i>
-                                    <i class="las la-star"></i>
-                                    <i class="las la-star"></i>
-                                    <i class="las la-star"></i>
-                                    <i class="las la-star"></i>
-                                    <div class="front-stars" style="width: {{$prod->rating_percent ? $prod->rating_percent  . '%' : '0%'}}">
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                    </div>
-                                </div>
-                                <span class="rating-count" v-if="hasReviewCount">({{ (count($prod->reviews)) }})</span>
-                            </div>
+                            <div class="product-price">{!!$prod->formatted_price!!}</div>
+                            <a href="{{route('products.show', $prod->slug)}}" style="font-weight: 900" class="link product-name">
+                                Xem chi tiết sản phẩm
+                            </a>
                         </div>
                     </div>
                 @endforeach
