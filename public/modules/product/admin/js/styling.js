@@ -75,16 +75,19 @@ $('.option-product .search').on('input', function() {
     // Thiết lập timer mới (1 giây = 1000 milliseconds)
     delayTimer = setTimeout(function() {
         let value = $('.option-product .search').val();
+        let ids = $('[name="productid[]"]').map(function() {
+            return $(this).val();
+        }).get();
         $.ajax({
             type: 'GET',
-            url: route('productsApi.show', value),
+            url: `/api/product?query=${value}`,
             success(response) {
                 $('.option-product ul li').remove();
                 if(response){
                     for(const i of response){
                         $('.option-product ul').append(
                             '<li>' +
-                            `<input type="checkbox" value="${i['id']}" onclick="isCheckedById(${i['id']}, '${i["name"]}')"> ` +
+                            `<input ${ids.includes(`${i['id']}`) ? "checked" : ''}  type="checkbox" value="${i['id']}" onclick="isCheckedById(${i['id']}, '${i["name"]}')"> ` +
                             i["name"] +
                             '</li>'
                         )

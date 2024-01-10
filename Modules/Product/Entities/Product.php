@@ -568,18 +568,6 @@ class Product extends Model
         ->firstOrFail();
     }
 
-    public static function findByName($name)
-    {
-        return  Product::with([
-            'categories', 'tags', 'attributes.attribute.attributeSet',
-            'options', 'files', 'relatedProducts', 'upSellProducts',
-        ])->join('product_translations', 'products.id', '=', 'product_translations.product_id')
-            ->where('product_translations.name', 'like', '%' . $name . '%')
-            ->limit(10)
-            ->get();
-    }
-
-
     public function clean()
     {
         return array_except($this->toArray(), [
