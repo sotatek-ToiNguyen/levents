@@ -2,9 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('post')->group(function() {
-    Route::get('/', function(){
-        echo 222;
-        die();
-    });
+Route::prefix('collection')->group(function() {
+    Route::get('/', [
+        'as' => 'collection.list',
+        'uses' => 'PostController@list',
+    ]);
+    Route::get('/{slug}', [
+        'as' => 'collection.show',
+        'uses' => 'PostController@show',
+    ]);
 });

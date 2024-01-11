@@ -21,6 +21,16 @@ $(() => {
             },
         ]
     })
+    $('.colection-image-data').slick({
+        rows: 0,
+        dots: false,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        rtl: window.FleetCart.rtl,
+    })
 
     $('.tab-products-header .tab-item').on('click',function (){
         $('.tab-products-header .tab-item').removeClass('active');

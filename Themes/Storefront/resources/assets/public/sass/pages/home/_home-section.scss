@@ -32,6 +32,9 @@
 }
 .colection{
     margin-top: 50px;
+    .landscape-post{
+        margin-top: 30px;
+    }
     .header-session{
         display: flex;
         vertical-align: bottom;
@@ -56,8 +59,11 @@
         display: block;
         text-align: center;
         h6{
-            font-weight: 100;
+            font-weight: 400;
         }
+    }
+    .title-post{
+        text-align: left;
     }
     .read-more-colection{
         font-size: 14px;

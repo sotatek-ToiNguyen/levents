@@ -7,10 +7,10 @@
     <li class="active">Create Styling</li>
     @push('scripts')
         <!-- Thêm các đường dẫn tới các file JS cần sử dụng -->
-        <script src="{{ asset('/modules/media/admin/js/media.js?v=3.0.7') }}"></script>
-        <script src="{{ asset('/modules/product/admin/js/styling.js?v=3.0.7') }}"></script>
-        <link rel="stylesheet" href="{{ asset('/modules/media/admin/css/media.css?v=3.0.7') }}">
-        <link rel="stylesheet" href="{{ asset('/modules/product/admin/css/product.css?v=3.0.7') }}">
+        <script src="{{ asset('/modules/media/admin/js/media.js?v=3.0.8') }}"></script>
+        <script src="{{ asset('/modules/product/admin/js/styling.js?v=3.0.8') }}"></script>
+        <link rel="stylesheet" href="{{ asset('/modules/media/admin/css/media.css?v=3.0.8') }}">
+        <link rel="stylesheet" href="{{ asset('/modules/product/admin/css/product.css?v=3.0.8') }}">
     @endpush
 @endcomponent
 

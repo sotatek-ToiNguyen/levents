@@ -19,7 +19,7 @@
     @if (setting('storefront_product_tabs_1_section_enabled'))
         <product-tabs-one-home :data="{{ json_encode($productTabsOne) }}"></product-tabs-one-home>
     @endif
-{{--    <colection></colection>--}}
+    <colection></colection>
     <styling></styling>
 {{--    <colection-video></colection-video>--}}
 {{--    <colection-image></colection-image>--}}

@@ -53,6 +53,19 @@ $('.delete-styling').click(function (){
     })
 })
 
+$('.delete-colection').click(function (){
+    let ids = $('.checkbox input:checked').map(function() {
+        return $(this).val();
+    }).get();
+    $.ajax({
+        type: "DELETE",
+        url: route("admin.post.destroy", {ids: ids.join()}),
+        success: () => {
+            location.reload();
+        }
+    })
+})
+
 function isCheckedById(id, name) {
 
     $('.option-product input[type="text"]').focus()

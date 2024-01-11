@@ -3,7 +3,7 @@
     @slot('title', 'Styling')
     @push('scripts')
         <!-- Thêm các đường dẫn tới các file JS cần sử dụng -->
-        <script src="{{ asset('/modules/product/admin/js/styling.js?v=3.0.0') }}"></script>
+        <script src="{{ asset('/modules/product/admin/js/styling.js?v=3.0.8') }}"></script>
     @endpush
     <li class="active">Styling</li>
 @endcomponent

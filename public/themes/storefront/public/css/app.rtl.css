@@ -23743,6 +23743,9 @@ textarea.form-control {
 .colection {
   margin-top: 50px;
 }
+.colection .landscape-post {
+  margin-top: 30px;
+}
 .colection .header-session {
   display: flex;
   vertical-align: bottom;
@@ -23765,7 +23768,10 @@ textarea.form-control {
   text-align: center;
 }
 .colection .post-name h6 {
-  font-weight: 100;
+  font-weight: 400;
+}
+.colection .title-post {
+  text-align: right;
 }
 .colection .read-more-colection {
   font-size: 14px;
@@ -27942,6 +27948,80 @@ h1, h2, h3, h4, h5, h6, p, span, body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+}
+
+.post-colection .product-card-top a {
+  height: 250px;
+  overflow: hidden;
+}
+.post-colection .product-card-top a img {
+  height: 100%;
+  width: auto;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.landscape-left-tab-collection {
+  display: flex;
+  flex-wrap: wrap;
+}
+.landscape-left-tab-collection .slick-slide img {
+  width: 100%;
+}
+.landscape-left-tab-collection .product-card-top {
+  height: 330px;
+  padding: 0 20px;
+}
+.landscape-left-tab-collection .slick-list, .landscape-left-tab-collection .slick-slider, .landscape-left-tab-collection .slick-list .slick-track {
+  height: 100%;
+}
+.landscape-left-tab-collection .slick-slide img {
+  display: block;
+  height: 100%;
+  width: auto !important;
+  margin: auto;
+}
+.landscape-left-tab-collection .slick-list {
+  padding: 30px 0 0px !important;
+}
+.landscape-left-tab-collection .product-info {
+  margin-top: 10px;
+}
+
+.product-card-collection {
+  width: 25%;
+  padding: 0 10px;
+}
+
+.colection-post .container {
+  padding: 0;
+}
+
+.colection-post .post-card {
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+.colection-post .post-card img {
+  width: 100%;
+}
+.colection-post .post-card .product-card-middle {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+.colection-post .post-card .product-card-middle h6 {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 100;
+}
+.colection-post .post-card .product-card-middle a {
+  background: #ffffff;
+  color: #000000;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 600px) {

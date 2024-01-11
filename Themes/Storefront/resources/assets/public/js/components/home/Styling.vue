@@ -2,7 +2,7 @@
   <section class="colection">
     <div class="container">
       <div class="header-session">
-        <h2 class="colection-title">Styling</h2>
+        <h2 class="colection-title">STYLING</h2>
         <a class="read-more-colection" href="/blogs/outfit">Xem tất cả</a>
       </div>
       <div class="tab-content landscape-styling" ref="productsPlaceholder">
