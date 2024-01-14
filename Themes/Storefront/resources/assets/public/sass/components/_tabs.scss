@@ -125,9 +125,20 @@
         margin-top: 30px;
     }
 }
-.tab-item.read-more{
-    float: right !important;
-    padding: 0 !important;
+.tab-products-header{
+    position: relative;
+}
+.read-more{
+    font-size: 14px;
+    line-height: 26px;
+    position: absolute;
+    padding: 10px 20px;
+    right: 0px;
+    top: 8px;
+    float: right;
+    background: #000;
+    color: #fff;
+    font-weight: 100;
 }
 @media screen and (max-width: $lg) {
     .tab-content {

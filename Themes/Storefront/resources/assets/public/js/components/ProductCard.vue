@@ -47,7 +47,11 @@
 
         <div class="product-card-middle">
             <ProductRating :ratingPercent="product.rating_percent" :reviewCount="product.reviews.length"/>
-
+            <div class="option-color" v-if="hasOptionColor">
+              <ul class=" list-inline form-custom-radio custom-selection">
+                <li @click="chosenColor($event, index)" v-for="(option, index) of optionColor.values" class="prod-color" :key="index" :style="{'background': option.label, 'color': option.label}"></li>
+              </ul>
+            </div>
             <a :href="productUrl" class="product-name">
                 <h6>{{ product.name }}</h6>
             </a>
@@ -97,7 +101,7 @@
       mounted() {
         $('.thumnail-image-data:not(.slick-slider)').slick({
           rows: 0,
-          dots: false,
+          dots: true,
           arrows: true,
           infinite: false,
           slidesToShow: 1,
@@ -106,5 +110,19 @@
         });
         console.log(22)
       },
+      methods:{
+        chosenColor(event, index){
+          const productCardElement = event.target.closest('.product-card');
+          const allListItems = productCardElement.querySelectorAll('.option-color li');
+          const slickDots = productCardElement.querySelectorAll('.slick-dots li');
+          if(slickDots[index]){
+            slickDots[index].dispatchEvent(new Event('click'));
+          }
+          allListItems.forEach((li) => {
+            li.classList.remove('active');
+          });
+          event.target.classList.add('active');
+        }
+      }
     }
 </script>

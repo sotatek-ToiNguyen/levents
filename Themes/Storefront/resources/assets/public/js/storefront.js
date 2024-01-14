@@ -32,6 +32,11 @@ $(() => {
         rtl: window.FleetCart.rtl,
     })
 
+    $('.product-details-top-inner .option-color li').on('click', function (){
+        let index = $(this).attr('data-index');
+        $('.additional-image-wrap .additional-image').eq(index - 1).click();
+    })
+
     $('.tab-products-header .tab-item').on('click',function (){
         $('.tab-products-header .tab-item').removeClass('active');
         $(this).addClass('active')

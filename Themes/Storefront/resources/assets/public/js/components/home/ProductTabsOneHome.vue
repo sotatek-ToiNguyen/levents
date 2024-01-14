@@ -7,12 +7,14 @@
                         v-for="(tab, index) in tabs"
                         :data-href="index"
                         :key="index"
+                        @click="changeData(tab)"
                         :class="classes(tab)"
                     >
                         {{ tab.label }}
                     </li>
-                    <li class="tab-item read-more"><a href="" class="read-more">Xem tất cả</a></li>
+
                 </ul>
+              <a href="" class="read-more">Xem tất cả</a>
             </div>
 
 
@@ -54,7 +56,6 @@
           changeData(tab){
               let href = '/categories/' + tab.label.replace(' ', '-').toLowerCase() + '/products';
               $('.read-more').attr('href', href)
-              this.change(tab);
             }
         },
 

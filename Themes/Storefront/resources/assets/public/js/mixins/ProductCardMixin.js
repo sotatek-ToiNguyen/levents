@@ -19,6 +19,24 @@ export default {
         hasNoOption() {
             return ! this.hasAnyOption;
         },
+        optionColor() {
+            for(const i of this.product.options){
+                if(i.name.toLowerCase() === "color"){
+                    return i
+                }
+            }
+            return null;
+        },
+
+        hasOptionColor() {
+            let options = this.product.options;
+            for(const i of options){
+                if(i.name.toLowerCase() === "color"){
+                    return true;
+                }
+            }
+            return false;
+        },
 
         hasBaseImage() {
             return this.product.base_image.length !== 0;
@@ -38,7 +56,17 @@ export default {
 
         baseImages() {
             if (this.hasMutiBaseImage) {
-                return this.product.additional_images;
+                let baseImage = [this.product.base_image];
+                let baseImages = this.product.additional_images;
+                for(const i in baseImages){
+                    let obj = {
+                        "filename" :baseImages[i]['filename'],
+                        "path" : baseImages[i]['path'],
+                        "id" :baseImages[i]['id'],
+                    }
+                    baseImage.push(obj)
+                }
+                return baseImage;
             }
         },
 

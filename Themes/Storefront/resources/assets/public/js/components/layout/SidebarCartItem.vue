@@ -15,7 +15,10 @@
 
             <ul class="list-inline product-options">
                 <li v-for="option in cartItem.options" :key="option.id">
-                    <label>{{ option.name }}:</label> {{ optionValues(option) }}
+                    <label v-if="option.name.toLowerCase() === 'color'">{{ option.name }}:
+                      <span class="color-select" :style="{'background': optionValues(option)}"></span>
+                    </label>
+                    <label v-else>{{ option.name }}: {{ optionValues(option) }}</label>
                 </li>
             </ul>
 

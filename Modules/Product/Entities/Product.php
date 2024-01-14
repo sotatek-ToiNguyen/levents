@@ -162,6 +162,7 @@ class Product extends Model
             ->withBaseImage()
             ->withPrice()
             ->withCount('options')
+            ->with('options')
             ->with('reviews')
             ->addSelect([
                 'products.id',
