@@ -29,7 +29,23 @@
                     <i class="las la-random"></i>
                 </button>
             </div>
-
+            <div class="product-card-actions action-sns">
+              <button v-if="product.link_shopee" class="btn btn-sns btn-shopee">
+                <a :href="product.link_shopee" target="_blank">
+                  <img src="/themes/storefront/public/images/shopee.png">
+                </a>
+              </button>
+              <button v-if="product.link_lazada" class="btn btn-sns btn-lazada">
+                <a :href="product.link_lazada"  target="_blank">
+                  <img src="/themes/storefront/public/images/lazada.webp">
+                </a>
+              </button>
+              <button v-if="product.link_tiki" class="btn btn-sns btn-tiki">
+                <a :href="product.link_tiki"  target="_blank">
+                  <img src="/themes/storefront/public/images/tiki.png">
+                </a>
+              </button>
+          </div>
             <ul class="list-inline product-badge">
                 <li class="badge badge-danger" v-if="product.is_out_of_stock">
                     {{ $trans('storefront::product_card.out_of_stock') }}

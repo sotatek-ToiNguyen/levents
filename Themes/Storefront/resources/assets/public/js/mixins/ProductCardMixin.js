@@ -56,17 +56,7 @@ export default {
 
         baseImages() {
             if (this.hasMutiBaseImage) {
-                let baseImage = [this.product.base_image];
-                let baseImages = this.product.additional_images;
-                for(const i in baseImages){
-                    let obj = {
-                        "filename" :baseImages[i]['filename'],
-                        "path" : baseImages[i]['path'],
-                        "id" :baseImages[i]['id'],
-                    }
-                    baseImage.push(obj)
-                }
-                return baseImage;
+                return this.product.files;
             }
         },
 

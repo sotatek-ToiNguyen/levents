@@ -8,6 +8,7 @@
 @endcomponent
 
 @section('content')
+{{--    @dd($tabs);--}}
     <form method="POST" action="{{ route('admin.products.store') }}" class="form-horizontal" id="product-create-form" enctype="multipart/form-data" novalidate>
         {{ csrf_field() }}
 

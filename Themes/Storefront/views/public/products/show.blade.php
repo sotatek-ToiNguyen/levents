@@ -99,6 +99,27 @@
                                         <i class="las la-random"></i>
                                         {{ trans('storefront::product.compare') }}
                                     </button>
+                                    @if($product->link_shopee)
+                                    <button class="btn btn-sns">
+                                        <a href="{{$product->link_shopee}}" target="_blank">
+                                            <img src="/themes/storefront/public/images/shopee.png">
+                                        </a>
+                                    </button>
+                                    @endif
+                                    @if($product->link_lazada)
+                                        <button class="btn btn-sns">
+                                            <a href="{{$product->link_lazada}}" target="_blank">
+                                                <img src="/themes/storefront/public/images/lazada.webp">
+                                            </a>
+                                        </button>
+                                    @endif
+                                    @if($product->link_tiki)
+                                        <button class="btn btn-sns">
+                                            <a href="{{$product->link_tiki}}" target="_blank">
+                                                <img src="/themes/storefront/public/images/tiki.png">
+                                            </a>
+                                        </button>
+                                    @endif
                                 </div>
                             </div>
 

@@ -60,6 +60,9 @@ class Product extends Model
         'is_active',
         'new_from',
         'new_to',
+        'link_shopee',
+        'link_tiki',
+        'link_lazada',
     ];
 
     /**
@@ -172,6 +175,9 @@ class Product extends Model
                 'products.qty',
                 'products.new_from',
                 'products.new_to',
+                'products.link_shopee',
+                'products.link_tiki',
+                'products.link_lazada',
             ]);
     }
 
