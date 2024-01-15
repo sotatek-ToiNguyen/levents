@@ -442,16 +442,16 @@ img{
         height: 195px;
     }
     .tab-content.landscape-left-tab-products.active{
-        gap: 4px;
+        gap: 0px;
     }
     .home-tabb .tab-content.landscape-left-tab-products .product-card {
-        width: calc(50% - 2px);
+        width: calc(50%);
         margin: 0;
         padding: 0;
     }
     .landscape-tab-products-wrap.home-tabb .container{
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     .product-card .product-card-middle{
         padding: 0 10px;
