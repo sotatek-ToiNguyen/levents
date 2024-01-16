@@ -43,6 +43,8 @@ class ProductIndexController
             ->products()
             ->forCard()
             ->limit(12)
+            ->orderBy('is_priority', "DESC")
+            ->orderBy('id', "DESC")
             ->get();
     }
 

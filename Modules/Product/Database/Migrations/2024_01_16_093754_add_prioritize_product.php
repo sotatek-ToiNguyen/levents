@@ -14,9 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('link_shopee')->nullable(true)->before('virtual');
-            $table->string('link_lazada')->nullable(true)->before('link_shopee');
-            $table->string('link_tiki')->nullable(true)->before('link_lazada');
+            $table->boolean('is_priority')->default(false);
         });
     }
 
@@ -28,9 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('link_tiki');
-            $table->dropColumn('link_lazada');
-            $table->dropColumn('link_shopee');
+            $table->dropColumn('is_priority');
         });
     }
 };

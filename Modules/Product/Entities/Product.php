@@ -63,6 +63,7 @@ class Product extends Model
         'link_shopee',
         'link_tiki',
         'link_lazada',
+        'is_priority',
     ];
 
     /**
@@ -178,6 +179,7 @@ class Product extends Model
                 'products.link_shopee',
                 'products.link_tiki',
                 'products.link_lazada',
+                'products.is_priority',
             ]);
     }
 
