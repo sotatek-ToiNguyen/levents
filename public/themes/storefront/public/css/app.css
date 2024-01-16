@@ -28134,6 +28134,20 @@ h1, h2, h3, h4, h5, h6, p, span, body {
 }
 
 @media screen and (max-width: 600px) {
+  .product-card-collection {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .custom-page-wrap img {
+    width: 100%;
+    height: auto;
+  }
+
+  .custom-page-wrap .image-outfix {
+    width: 50%;
+  }
+
   .header-wrap-inner .container a img {
     width: 150px;
   }
