@@ -30,7 +30,7 @@
                         <div class="tab-content tab-content-left"><h2>
                         {{data.banner_2.title}}
                         </h2> <div class="image-with-text__text rte text-2-sm body h3">
-                          <p>{{data.banner_1.description}}</p>
+                          <p>{{data.banner_2.description}}</p>
                         </div> <a data-prefetch="" href="/collections/all" class="button button--large button-lg button--primary">
                           Xem thêm
                         </a>
