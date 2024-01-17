@@ -3,6 +3,7 @@
 {{ Form::text('link_shopee', 'Link SNS Shopee', $errors, $product, ['labelCol' => 2]) }}
 {{ Form::text('link_lazada', 'Link SNS Lazada', $errors, $product, ['labelCol' => 2]) }}
 {{ Form::text('link_tiki', 'Link SNS Tiki', $errors, $product, ['labelCol' => 2]) }}
+{{ Form::text('link_tiktok', 'Link SNS Tiktok', $errors, $product, ['labelCol' => 2]) }}
 
 <div class="row">
     <div class="col-md-8">

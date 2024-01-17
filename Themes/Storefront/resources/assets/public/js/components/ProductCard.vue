@@ -45,6 +45,11 @@
                   <img src="/themes/storefront/public/images/tiki.png">
                 </a>
               </button>
+              <button v-if="product.link_tiktok" class="btn btn-sns btn-tiki">
+                <a :href="product.link_tiktok"  target="_blank">
+                  <img src="/themes/storefront/public/images/tiktok.png">
+                </a>
+              </button>
           </div>
             <ul class="list-inline product-badge">
                 <li class="badge badge-danger" v-if="product.is_out_of_stock">

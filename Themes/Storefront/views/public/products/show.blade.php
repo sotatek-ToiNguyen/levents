@@ -120,6 +120,13 @@
                                             </a>
                                         </button>
                                     @endif
+                                    @if($product->link_tiktok)
+                                        <button class="btn btn-sns">
+                                            <a href="{{$product->link_tiktok}}" target="_blank">
+                                                <img src="/themes/storefront/public/images/shopee.png">
+                                            </a>
+                                        </button>
+                                    @endif
                                 </div>
                             </div>
 
