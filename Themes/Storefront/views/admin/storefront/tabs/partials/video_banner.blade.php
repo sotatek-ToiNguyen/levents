@@ -9,11 +9,11 @@
             @if (is_null($banner->image->path))
                 <i class="file-icon fa fa-file-video-o"></i>
                 <video class="hide">
-                    @else
-                        <video src="{{ $banner->image->path }}" alt="Banner">
-                            @endif
+            @else
+                <video src="{{ $banner->image->path }}" alt="Banner">
+            @endif
 
-                            <input type="hidden" name="translatable[{{ $name }}_file_id]" value="{{ $banner->image->id }}" class="banner-file-id">
+            <input type="hidden" name="translatable[{{ $name }}_file_id]" value="{{ $banner->image->id }}" class="banner-file-id">
         </div>
         @endHasAccess
 
@@ -24,6 +24,12 @@
                         <label for="{{ $name }}-title">Title</label>
                         <input type="text" name="{{ $name }}_title" value="{{ $banner->title }}" class="form-control" id="{{ $name }}-title">
                     </div>
+
+                    <div class="form-group">
+                        <label for="{{ $name }}-video">Link Video</label>
+                        <input type="text" name="{{ $name }}_video" value="{{ $banner->video }}" class="form-control" id="{{ $name }}-video">
+                    </div>
+
                     <div class="form-group">
                         <label for="{{ $name }}-description">Description</label>
                         <textarea type="text" name="{{ $name }}_description"  class="form-control" id="{{ $name }}-description">{{$banner->description}}</textarea>

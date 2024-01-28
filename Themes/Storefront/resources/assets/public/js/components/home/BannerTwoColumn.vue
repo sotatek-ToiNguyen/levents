@@ -2,10 +2,10 @@
     <section class="banner-wrap two-column-banner colection-video">
         <div class="container banner-link">
             <div class="row">
-                <div class="col-lg-9 col-sm-18">
-                    <video playsinline="true" controls="controls" autoplay="autoplay" loop="loop" preload="none" muted="muted" poster="">
-                      <source :src="data.banner_1.image.path" type="video/mp4">
-                    </video>
+                <div class="col-lg-9 col-sm-18" v-html="data.banner_1.video">
+<!--                    <video playsinline="true" controls="controls" autoplay="autoplay" loop="loop" preload="none" muted="muted" poster="">-->
+<!--                      <source :src="data.banner_1.image.path" type="video/mp4">-->
+<!--                    </video>-->
                 </div>
               <div class="col-lg-9 col-sm-18 content-ww">
                   <div class="tab-content">

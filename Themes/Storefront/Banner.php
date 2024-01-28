@@ -10,14 +10,16 @@ class Banner
     public $image;
     public $call_to_action_url;
     public $open_in_new_window;
+    public $video;
     public $title;
     public $description;
 
-    public function __construct($image, $call_to_action_url, $open_in_new_window, $title, $description)
+    public function __construct($image, $call_to_action_url, $open_in_new_window, $title, $description, $video)
     {
         $this->image = $image;
         $this->call_to_action_url = $call_to_action_url;
         $this->title = $title;
+        $this->video = $video;
         $this->description = $description;
         $this->open_in_new_window = (bool) $open_in_new_window;
     }
@@ -76,7 +78,8 @@ class Banner
                     setting("{$name}_call_to_action_url"),
                     setting("{$name}_open_in_new_window"),
                     setting("{$name}_title"),
-                    setting("{$name}_description")
+                    setting("{$name}_description"),
+                    setting("{$name}_video")
                 );
             });
     }
